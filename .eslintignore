@@ -1,0 +1,50 @@
+# ━━  VERSION 1.0.0 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# ━━  GENERAL ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# Matches directory <root>/build/
+/build/**
+
+# Matches directory <root>/coverage/
+/coverage/**
+
+# Matches directory <root>/docs/
+/docs/**
+
+# Matches directory <root>/jsdoc/
+/jsdoc/**
+
+# Matches directory <root>/templates/
+/templates/**
+
+# Matches directory <root>/tests/bench/
+/tests/bench/**
+
+# Matches directory <root>/tests/fixtures/
+/tests/fixtures/**
+
+# Matches directory <root>/tests/performance/
+/tests/performance/**
+
+# Matches directory <root>/tmp/
+/tmp/**
+
+test.js
+!.eslintrc
+
+node_modules/
+jspm_packages/
+dist/
+
+# ━━  WORKSPACE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+notes/
+quick.*
+!quick.develop.js
+!quick.build.js
+!quick.dev.js
+test.*.js
+dummy.*.js
+/develop.js
+/development/testing.*.js
+/development/testing.js
+reports/
+
+src/serviceWorker.js
