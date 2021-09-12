@@ -1,0 +1,9 @@
+{
+  "ignore": [
+    "lib/storage/**/**",
+    "test/*",
+    "docs/*",
+    "README.md",
+    "*.json"
+  ]
+}
