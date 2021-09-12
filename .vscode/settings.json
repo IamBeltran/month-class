@@ -1,0 +1,48 @@
+{
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/.hg": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    /**/
+    "node_modules": true,
+    ".babelrc": true,
+    ".editorconfig": true,
+    ".eslintignore": true,
+    ".eslintrc": true,
+    ".gitattributes": true,
+    ".gitignore": true,
+    ".huskyrc": true,
+    ".lintstagedrc": true,
+    ".prettierrc": true,
+    ".prettierrc.json": true,
+    "ava.config.*": true,
+    ".stylelintrc": true,
+    "COMMIT_EDITMSG": true,
+    "commitlint.config.js": true,
+    "gulpfile.js": true,
+    "jest.config.json": true,
+    "jsdoc.json": true,
+    "LICENSE": true,
+    "nodemon.json": true,
+    "package-lock.json": true,
+    "yarn.lock": true,
+    "yarn-error.log": true,
+    "README.md": false,
+    /**/
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/bazel-out": true,
+    "**/dist": true
+  },
+  "[markdown]": {
+    "editor.renderWhitespace": "all",
+    "editor.acceptSuggestionOnEnter": "smart",
+    "editor.parameterHints.enabled": true,
+    "editor.quickSuggestions": true,
+    "editor.snippetSuggestions": "inline",
+  }
+}
