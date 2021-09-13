@@ -4,16 +4,11 @@
   "private": false,
   "description": "class to generate information for a month, starting from a given date",
   "keywords": [
-    "test",
-    "testing",
-    "electron",
-    "application",
-    "app",
+    "class",
     "javascript",
-    "settings",
-    "cross-platform",
-    "desktop",
-    "apps"
+    "date",
+    "month",
+    "events"
   ],
   "directories": {
     "doc": "docs",
