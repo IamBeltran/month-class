@@ -2,7 +2,7 @@
   "name": "month",
   "version": "0.1.0",
   "private": false,
-  "description": "class to generate month information of a given date",
+  "description": "class to generate information for a month, starting from a given date",
   "keywords": [
     "test",
     "testing",
