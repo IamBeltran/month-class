@@ -22,7 +22,7 @@
     "COMMIT_EDITMSG": true,
     "commitlint.config.js": true,
     "gulpfile.js": true,
-    "jest.config.json": true,
+    "jest.config.*": true,
     "jsdoc.json": true,
     "LICENSE": true,
     "nodemon.json": true,
