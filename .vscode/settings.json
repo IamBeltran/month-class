@@ -15,6 +15,7 @@
     ".gitignore": true,
     ".huskyrc": true,
     ".lintstagedrc": true,
+    ".prettierignore": true,
     ".prettierrc": true,
     ".prettierrc.json": true,
     "ava.config.*": true,
