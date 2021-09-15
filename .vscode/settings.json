@@ -6,6 +6,7 @@
     "**/.svn": true,
     "**/CVS": true,
     /**/
+    ".husky": true,
     "node_modules": true,
     ".babelrc": true,
     ".editorconfig": true,
