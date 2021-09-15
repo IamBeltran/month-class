@@ -11,6 +11,7 @@
     ".editorconfig": true,
     ".eslintignore": true,
     ".eslintrc": true,
+    ".eslintrc.*": true,
     ".gitattributes": true,
     ".gitignore": true,
     ".huskyrc": true,
