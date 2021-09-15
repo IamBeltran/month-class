@@ -2,7 +2,7 @@
   "name": "month",
   "version": "0.1.0",
   "private": false,
-  "description": "class to generate information for a month, starting from a given date",
+  "description": "Month class, manages information of the month from a given date",
   "keywords": [
     "class",
     "javascript",
