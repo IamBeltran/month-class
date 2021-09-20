@@ -1,5 +1,6 @@
 {
-  "modulePaths": ["test/"],
+  "displayName": "Unit tests for class Month",
+  "modulePaths": ["test/*.spec.js"],
   "modulePathIgnorePatterns": [
     "notes/",
     "develop/",
