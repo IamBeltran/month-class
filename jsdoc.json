@@ -3,8 +3,10 @@
     "allowUnknownTags": true,
     "dictionaries": ["jsdoc", "closure"]
   },
+  "sourceType": "module",
   "source": {
-    "include": ["src", "lib"],
+    "include": ["./src"],
+    "exclude": ["./notes", "./node_modules"],
     "includePattern": ".+\\.js(doc|x)?$",
     "excludePattern": "(^|\\/|\\\\)_"
   },
@@ -12,12 +14,12 @@
     "plugins/markdown"
   ],
   "templates": {
-    "cleverLinks": true,
-    "monospaceLinks": true
+    "cleverLinks": false,
+    "monospaceLinks": false
   },
   "opts": {
     "destination": "docs",
-    "recurse": true,
+    "recurse": false,
     "readme": "README.md"
   }
 }
