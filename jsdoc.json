@@ -19,7 +19,7 @@
   },
   "opts": {
     "destination": "docs",
-    "recurse": false,
+    "recurse": true,
     "readme": "README.md"
   }
 }
