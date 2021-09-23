@@ -1,5 +1,5 @@
 /**
- * @file Manages MonthError class.
+ * @file Contains class 'MonthError'.
  */
 
 // ━━	MODULE	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
