@@ -1,10 +1,11 @@
 /**
- * @file Contains class 'MonthError'.
+ * @file Manages MonthError module, used to create all errors specific to
+ * the Month class.
  */
 
 // ━━	MODULE	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * MonthError is the base class for all errors specific to the 'month' class.
+ * MonthError is the base class for all errors specific to the 'Month' class.
  *
  * @class    MonthError
  * @augments Error
