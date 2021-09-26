@@ -50,9 +50,9 @@ class MonthError extends Error {
    * @memberof MonthError
    */
   static messages = {
-    TYPE_CURRENT_OPTION: 'current option must be a Date',
-    TYPE_DATEBOOK_OPTION: 'datebook option must be an Array',
-    INVALID_WEEKEND_OPTION: 'weekend option must be a number or string',
+    TYPE_CURRENT_OPTION: 'Current option must be a Date',
+    TYPE_DATEBOOK_OPTION: 'Datebook option must be an Array',
+    INVALID_WEEKEND_OPTION: 'Weekend option must be a number between 0 to 12 or a string that match the regex /^[0-1]{7}$/', // eslint-disable-line prettier/prettier
     INVALID_DATEBOOK_ITEM: "Some datebook's item has wrong format",
   };
 }
