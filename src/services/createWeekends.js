@@ -1,5 +1,6 @@
 /**
- * @file Manages createWeekends module.
+ * @file Manages createWeekends module, used to create weekends property the
+ * class Month.
  */
 
 // ━━	MODULE	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
