@@ -9,9 +9,9 @@
  * the month, requires a parameter that must be an object, with the properties
  * `tasks`, `events`, `appointments` and `meetings`.
  *
- * @param     {object} planner - An `object` with month activities ordered by type.
- * @returns   {Array.<object>} An array with datebookItem.
  * @private
+ * @param   {object} planner - An `object` with month activities ordered by type.
+ * @returns {Array.<object>} An array with datebookItem.
  * @example const datebook = mergePlans({
  *   tasks: [],
  *   events: [],
@@ -36,9 +36,9 @@ const mergePlans = planner => [
  * The function requires a parameter that must be an object, with the properties
  * `tasks`, `events`, `appointments` and `meetings`.
  *
- * @param     {object} planner - Object with sorted datebookitems by type.
- * @returns   {Array.<number>} An array with numeric items.
  * @private
+ * @param   {object} planner - Object with sorted datebookitems by type.
+ * @returns {Array.<number>} An array with numeric items.
  * @example const holidays = getDaysHoliday(datebook); // [1,2,3]
  *
  */
