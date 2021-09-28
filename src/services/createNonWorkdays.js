@@ -2,6 +2,7 @@
  * @file Manages createNonWorkdays module, used to create nonworkdays property the
  * class Month.
  */
+
 // ━━	FUNCTIONS	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * The `sortByNumber()` function sorts a number array.
