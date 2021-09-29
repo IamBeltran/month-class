@@ -85,7 +85,8 @@ const filterByDate = ({ datebook, YYMMDD, SCE }) =>
 // ━━	MODULE	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
  * The `createPlanner()` function returns an object with the properties `tasks`,
- * `events`, `appointments` and `meetings`.
+ * `events`, `appointments` and `meetings`, that represent scheduled activities
+ * of datebook.
  *
  * The function requires an parameter `options`, must be an object with the
  * properties `datebook` `YYMMDD` and `SCE`.
