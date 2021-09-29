@@ -11,7 +11,7 @@
  *
  * @private
  * @param   {object} planner - An `object` with month activities ordered by type.
- * @returns {Array.<object>} An array with datebookItem.
+ * @returns {Array.<object>} An array with datebook items.
  * @example const datebook = mergePlans({
  *   tasks: [],
  *   events: [],
@@ -37,9 +37,9 @@ const mergePlans = planner => [
  * `tasks`, `events`, `appointments` and `meetings`.
  *
  * @private
- * @param   {object} planner - Object with sorted datebookitems by type.
- * @returns {Array.<number>} An array with numeric items.
- * @example const holidays = getDaysHoliday(datebook); // [1,2,3]
+ * @param   {object} planner - Object with sorted datebook items by type.
+ * @returns {Array.<number>} A number array.
+ * @example const holidays = createHolidays(datebook); // [...]
  *
  */
 const createHolidays = planner => {
