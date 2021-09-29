@@ -31,7 +31,7 @@ const sortByNumber = (first, second) => first - second;
  * days of the month that are holidays. The values are like `Date.prototype.getDate()`.
  *
  * @private
- * @param   {object} settings - An object with two properties: holidays, weekends.
+ * @param   {object} settings - Function settings.
  * @param   {Array.<number>} settings.weekends - An array with numeric elements.
  * @param   {Array.<number>} settings.holidays - An array with numeric elements.
  * @returns {Array.<number>}  An array with numeric items.
