@@ -21,19 +21,19 @@ const sortByNumber = (first, second) => first - second;
  * The `createNonWorkdays()` function returns a number array, that represent the
  * month's days that it is non workdays.
  *
- * The function requires an parameter `settings`, must be an object with the
+ * The function requires an parameter `options`, must be an object with the
  * properties `weekends` and `holidays`.
  *
- * The `settings.weekends` value must be a number array, that represents the
+ * The `options.weekends` value must be a number array, that represents the
  * days of the month that are weekends. The values are like `Date.prototype.getDate()`.
  *
- * The `settings.holidays` value must be a number array, that represents the
+ * The `options.holidays` value must be a number array, that represents the
  * days of the month that are holidays. The values are like `Date.prototype.getDate()`.
  *
  * @private
- * @param   {object} settings - Function settings.
- * @param   {Array.<number>} settings.weekends - An array with numeric elements.
- * @param   {Array.<number>} settings.holidays - An array with numeric elements.
+ * @param   {object} options - Function options.
+ * @param   {Array.<number>} options.weekends - An array with numeric elements.
+ * @param   {Array.<number>} options.holidays - An array with numeric elements.
  * @returns {Array.<number>}  An array with numeric items.
  * @example const nonworkdays = createNonWorkdays({ weekends, holidays });
  *
