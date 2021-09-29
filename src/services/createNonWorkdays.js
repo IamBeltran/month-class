@@ -7,10 +7,10 @@
 /**
  * The `sortByNumber()` function sorts a number array.
  *
- * @param     {number } first - The first element for comparison.
- * @param     {number } second - The second element for comparison.
- * @returns   {Array<number>} The sorted array.
  * @private
+ * @param   {number } first - The first element for comparison.
+ * @param   {number } second - The second element for comparison.
+ * @returns {Array<number>} The sorted array.
  * @example [100, 2, 1].sort(sortByNumber); // expected value [1, 2, 100]
  *
  */
@@ -30,11 +30,11 @@ const sortByNumber = (first, second) => first - second;
  * The `settings.holidays` value must be a number array, that represents the
  * days of the month that are holidays. The values are like `Date.prototype.getDate()`.
  *
- * @param     {object} settings - An object with two properties: holidays, weekends.
- * @param     {Array.<number>} settings.weekends - An array with numeric elements.
- * @param     {Array.<number>} settings.holidays - An array with numeric elements.
- * @returns   {Array.<number>}  An array with numeric items.
  * @private
+ * @param   {object} settings - An object with two properties: holidays, weekends.
+ * @param   {Array.<number>} settings.weekends - An array with numeric elements.
+ * @param   {Array.<number>} settings.holidays - An array with numeric elements.
+ * @returns {Array.<number>}  An array with numeric items.
  * @example const nonworkdays = createNonWorkdays({ weekends, holidays });
  *
  */
