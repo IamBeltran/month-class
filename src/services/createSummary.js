@@ -9,14 +9,14 @@
  * month's summary, month's work days summary, month's weeks summary, month's
  * days summary and month's dates summary.
  *
- * The function requires an parameter `settings`, must be an object with the
+ * The function requires an parameter `options`, must be an object with the
  * properties `YYMMDD` and `nonworkdays`.
  *
- * The `settings.YYMMDD` value must be a number array with three elements, that
+ * The `options.YYMMDD` value must be a number array with three elements, that
  * represents a date (year, month and day). The value of the month is as
  * `Date.prototype.getDate()`.
  *
- * The `settings.nonworkdays` value must be a number array, that represent the
+ * The `options.nonworkdays` value must be a number array, that represent the
  * month's non-working days.
  *
  * @private

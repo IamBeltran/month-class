@@ -9,26 +9,26 @@
  * month's days that are weekend. The value of the returned elements is the same
  * `Date.prototype.getDate()`.
  *
- * The function requires an parameter `settings`, must be an object with the
+ * The function requires an parameter `options`, must be an object with the
  * properties `YYMMDD` `WEEKEND` and `SCE`.
  *
- * The `settings.YYMMDD` value must be a number array with three elements, that
+ * The `options.YYMMDD` value must be a number array with three elements, that
  * represents a date (year, month and day). The value of the month is as
  * `Date.prototype.getDate()`.
  *
- * The `settings.WEEKEND` value must be a number array. The array values represent
+ * The `options.WEEKEND` value must be a number array. The array values represent
  * the days of the week that are weekend, the value of the elements is like
  * `Date.prototype.getDay()`.
  *
- * The `settings.SCE` value must be a number array with three elements. The array
+ * The `options.SCE` value must be a number array with three elements. The array
  * values represent the month's start day, month's current day and month's end
  * day. The value of the elements is like `Date.prototype.getDate()`.
  *
  * @private
- * @param   {object} settings - Function settings.
- * @param   {Array.<number>} settings.YYMMDD - A number array with three elements.
- * @param   {Array.<number>} settings.WEEKEND - A number array.
- * @param   {Array.<number>} settings.SCE - A number array with three elements.
+ * @param   {object} options - Function options.
+ * @param   {Array.<number>} options.YYMMDD - A number array with three elements.
+ * @param   {Array.<number>} options.WEEKEND - A number array.
+ * @param   {Array.<number>} options.SCE - A number array with three elements.
  * @returns {Array.<number>} A number array.
  * @example const weekends = createWeekends({
  *   YYMMDD: [2020, 0, 1],
