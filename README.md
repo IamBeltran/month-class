@@ -202,11 +202,13 @@ Description:
 
 Description:
 
-#### Planner
+## Instance Methods
+
+## Type Definitions
+
+### Planner
 
 Hi
-
-## Instance Methods
 
 ## USAGE
 
