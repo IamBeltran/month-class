@@ -216,12 +216,31 @@ An object with the properties `tasks`, `events`, `appointments` and `meetings`, 
 
 Properties:
 
-| Name          | Type                   | Description                                                         |
-|---------------|------------------------|---------------------------------------------------------------------|
-| tasks         | `Array.<Task>`         | Collection of all [Tasks](#Type-Tasks) for the month.               |
-| events        | `Array.<Event>`        | Collection of all [Events](#Type-Events) for the month.             |
-| appointments  | `Array.<Appointment>`  | Collection of all [Appointments](#Type-Appointments) for the month. |
-| meetings      | `Array.<Meeting>`      | Collection of all [Meetings](#Type-Meetings) for the month.         |
+| Name            | Type                   | Description                                                         |
+|-----------------|------------------------|---------------------------------------------------------------------|
+| `tasks`         | `Array.<Task>`         | Collection of all [Tasks](#Type-Tasks) for the month.               |
+| `events`        | `Array.<Event>`        | Collection of all [Events](#Type-Events) for the month.             |
+| `appointments`  | `Array.<Appointment>`  | Collection of all [Appointments](#Type-Appointments) for the month. |
+| `meetings`      | `Array.<Meeting>`      | Collection of all [Meetings](#Type-Meetings) for the month.         |
+
+### Type Task
+
+- Type: `object`
+
+A task-type scheduled activity.
+
+An object with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
+
+Properties:
+
+| Name          | Type             | Description                               |
+|---------------|------------------|-------------------------------------------|
+| `date`        | `string`         | Scheduled date for the task "YYYY-MM-DD"  |
+| `title`       | `string`         | Task title.                               |
+| `description` | `string`         | Task description.                         |
+| `holiday`     | `boolean`        | If the task is taken as a holiday.        |
+| `type`        | `"task"`         | Type of scheduled activity task.          |
+| `YYMMDD`      | `Array.<number>` | Scheduled date for the task [YY, MM, DD]. |
 
 ## USAGE
 
