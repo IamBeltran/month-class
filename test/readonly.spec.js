@@ -168,7 +168,7 @@ const MONTH_WEEKEND = [
       test: 'month.WEEKEND match array contents',
     },
     options: { weekend: 14 },
-    expected: [],
+    expected: [0],
   },
   {
     name: {
