@@ -6,7 +6,11 @@ Month class, manages information of the month from a given date.
 
 ## Weekend option
 
-The weekend option must be a `string` or integer `number` between 0 to 12. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`.
+The 'weekend' option indicates the days of the week that are taken as the weekend in the month.
+
+Must be a `string` or integer `number` between 0 to 15. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`, if want to indicate that weekends are Fridays, the value must be `"0000100"`.
+
+The following table shows the corresponding days if a number is passed and its string equivalent.
 
 | Number | String      | Weekday             |
 |--------|-------------|---------------------|
@@ -24,7 +28,8 @@ The weekend option must be a `string` or integer `number` between 0 to 12. If a 
 | 11     | `'0001000'` | Thursday            |
 | 12     | `'0000100'` | Friday              |
 | 13     | `'0000010'` | Saturday            |
-| 14     | `'0000000'` | None                |
+| 14     | `'0000001'` | Sunday              |
+| 15     | `'0000000'` | None                |
 
 ## Datebook option
 
