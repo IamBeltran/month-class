@@ -168,7 +168,7 @@ Its value is like `Date.prototype.getMonth()`.
 
 ### planner
 
-- Type `Planner` [See Planner](#Planner)
+- Type `Planner` [See Planner](#Type-Planner)
 
 Description: Ordered collection of plans of the month.
 
@@ -206,9 +206,20 @@ Description:
 
 ## Type Definitions
 
-### Planner
+### Type Planner
 
-Hi
+- Type: `object`
+
+Ordered collection of activities of the month.
+
+An object with the properties `tasks`, `events`, `appointments` and `meetings`, each property of the object is an `array`.
+
+| Properties: Name | Type                   | Description                                                                     |
+|------------------|------------------------|---------------------------------------------------------------------------------|
+| tasks            | `Array.<Task>`         | Collection of all [Tasks](#Type-Tasks)tasks for the month.                      |
+| events           | `Array.<Event>`        | Collection of all [Events](#Type-Events)events for the month.                   |
+| appointments     | `Array.<Appointment>`  | Collection of all [Appointments](#Type-Appointments)appointments for the month. |
+| meetings         | `Array.<Meeting>`      | Collection of all [Meetings](#Type-Meetings)meetings for the month.             |
 
 ## USAGE
 
