@@ -218,10 +218,10 @@ Properties:
 
 | Name            | Type                   | Description                                                         |
 |-----------------|------------------------|---------------------------------------------------------------------|
-| `tasks`         | `Array.<Task>`         | Collection of all [Tasks](#Type-Tasks) for the month.               |
-| `events`        | `Array.<Event>`        | Collection of all [Events](#Type-Events) for the month.             |
-| `appointments`  | `Array.<Appointment>`  | Collection of all [Appointments](#Type-Appointments) for the month. |
-| `meetings`      | `Array.<Meeting>`      | Collection of all [Meetings](#Type-Meetings) for the month.         |
+| `tasks`         | `Array.<Task>`         | Collection of all [Tasks](#Type-Task) for the month.               |
+| `events`        | `Array.<Event>`        | Collection of all [Events](#Type-Event) for the month.             |
+| `appointments`  | `Array.<Appointment>`  | Collection of all [Appointments](#Type-Appointment) for the month. |
+| `meetings`      | `Array.<Meeting>`      | Collection of all [Meetings](#Type-Meeting) for the month.         |
 
 ### Type Task
 
