@@ -33,13 +33,15 @@ The following table shows the corresponding days if a number is passed and its `
 
 ## Datebook option
 
-| Property    | Type      | Description                                                              |
-|-------------|-----------|--------------------------------------------------------------------------|
-| date        | `string`  | Scheduled date for activity, ISO format (ISO 8601) `"YYYY-MM-DD"`        |
-| title       | `string`  | Activity title                                                           |
-| description | `string`  | Activity description                                                     |
-| holiday     | `boolean` | If activity is taken as a holiday                                        |
-| type        | `string`  | Activity type, allowed values: `task`, `event`, `appointment`, `meeting` |
+The option `datebook` is a collection of scheduled activities,
+
+| Property      | Type      | Description                                                              |
+|---------------|-----------|--------------------------------------------------------------------------|
+| `date`        | `string`  | Scheduled date for activity, ISO format (ISO 8601) `"YYYY-MM-DD"`        |
+| `title`       | `string`  | Activity title                                                           |
+| `description` | `string`  | Activity description                                                     |
+| `holiday`     | `boolean` | If activity is taken as a holiday                                        |
+| `type`        | `string`  | Activity type, allowed values: `task`, `event`, `appointment`, `meeting` |
 
 ```javascript
 // Example
