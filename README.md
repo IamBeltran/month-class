@@ -12,18 +12,18 @@ The class `Month` requires an optional parameter `options`, must be an `object` 
 
 The `options.current` value must be type `date`, it is used as a base to identify the days that have `elapsed`, the `remaining` days of the month and `current` day, the `default` value is `new Date()`.
 
-The `options.weekend` value must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`, the `default` value is `0`.
+The `options.weekend` value must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`, the `default` value is `0`, [See Weekend option](#Type-WeekendOption).
 
-The `options.datebook` value must be an object `array`, that represents a collection of scheduled activities from a Datebook, the default value is `[]`.
+The `options.datebook` value must be an object `array`, that represents a collection of scheduled activities from a Datebook, the default value is `[]`, [See Datebook option](#Type-Datebook).
 
 Parameters Description:
 
-| Name               | Type            | Attributes                | Description                                                                  |
-|--------------------|-----------------|---------------------------|------------------------------------------------------------------------------|
-| `options`          | `object`        | `[optional]`              | Month class options.                                                         |
-| `options.current`  | `Date`          | `[optional = new Date()]` | Current date of month.                                                       |
-| `options.weekend`  | `WeekendOption` | `[optional = 0]`          | Option to specify weekends. [See Weekend option](#Weekend-option).           |
-| `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. [See Datebook option](#Datebook-option).  |
+| Name               | Type            | Attributes                | Description                        |
+|--------------------|-----------------|---------------------------|------------------------------------|
+| `options`          | `object`        | `[optional]`              | Month class options.               |
+| `options.current`  | `Date`          | `[optional = new Date()]` | Current date of month.             |
+| `options.weekend`  | `WeekendOption` | `[optional = 0]`          | Option to specify weekends.        |
+| `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. |
 
 ### Throws
 
@@ -63,71 +63,6 @@ const month = new Month({
     }
   ],
 });
-```
-
-### Weekend option
-
-The `weekend` option indicates the days of the week that are taken as the weekend in the month.
-
-Must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`. For example if want to indicate that weekends are Fridays, the value must be `"0000100"`.
-
-The following table shows the corresponding days if a number is passed and its `string` equivalent.
-
-| Number | String      | Weekday             |
-|--------|-------------|---------------------|
-| 0      | `'0000011'` | Saturday, Sunday    |
-| 1      | `'1000001'` | Sunday, Monday      |
-| 2      | `'1100000'` | Monday, Tuesday     |
-| 3      | `'0110000'` | Tuesday, Wednesday  |
-| 4      | `'0011000'` | Wednesday, Thursday |
-| 5      | `'0001100'` | Thursday, Friday    |
-| 6      | `'0000110'` | Friday, Saturday    |
-| 7      | `'0000001'` | Sunday              |
-| 8      | `'1000000'` | Monday              |
-| 9      | `'0100000'` | Tuesday             |
-| 10     | `'0010000'` | Wednesday           |
-| 11     | `'0001000'` | Thursday            |
-| 12     | `'0000100'` | Friday              |
-| 13     | `'0000010'` | Saturday            |
-| 14     | `'0000001'` | Sunday              |
-| 15     | `'0000000'` | None                |
-
-### Datebook option
-
-The `datebook` option is a collection of scheduled activities.
-
-Must be an array of objects that follow the following characteristics
-
-| Property      | Type      | Description                                                               |
-|---------------|-----------|---------------------------------------------------------------------------|
-| `date`        | `string`  | Scheduled date for activity, ISO format (ISO 8601) `"YYYY-MM-DD"`.        |
-| `title`       | `string`  | Activity title.                                                           |
-| `description` | `string`  | Activity description.                                                     |
-| `holiday`     | `boolean` | If activity is taken as a holiday.                                        |
-| `type`        | `string`  | Activity type, allowed values: `task`, `event`, `appointment`, `meeting`. |
-
-```javascript
-// Example
-const datebook = [{
-  date: '2021-01-20',
-  title: "Mom's birthday",
-  description: "Don't forget to buy a gift",
-  type: 'event',
-  holiday: true,
-},{
-  date: '2021-01-10',
-  title: 'Send final sales report',
-  description: "Don't forget to attach graphics",
-  type: 'task',
-  holiday: true,
-},{
-  date: new Date(2021, 0, 15).toISOString(),
-  title: 'Rick and morty season finale',
-  description: "Don't forget to order pizza",
-  type: 'task',
-  holiday: true,
-}];
-
 ```
 
 ## Instance Properties
@@ -206,7 +141,76 @@ Description:
 
 ## Type Definitions
 
-### Type Planner
+### Type `WeekendOption`
+
+- Type: `number|string`
+
+The `weekend` option indicates the days of the week that are taken as the weekend in the month.
+
+Must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`. For example if want to indicate that weekends are Fridays, the value must be `"0000100"`.
+
+The following table shows the corresponding days if a number is passed and its `string` equivalent.
+
+| Number | String      | Weekday             |
+|--------|-------------|---------------------|
+| 0      | `'0000011'` | Saturday, Sunday    |
+| 1      | `'1000001'` | Sunday, Monday      |
+| 2      | `'1100000'` | Monday, Tuesday     |
+| 3      | `'0110000'` | Tuesday, Wednesday  |
+| 4      | `'0011000'` | Wednesday, Thursday |
+| 5      | `'0001100'` | Thursday, Friday    |
+| 6      | `'0000110'` | Friday, Saturday    |
+| 7      | `'0000001'` | Sunday              |
+| 8      | `'1000000'` | Monday              |
+| 9      | `'0100000'` | Tuesday             |
+| 10     | `'0010000'` | Wednesday           |
+| 11     | `'0001000'` | Thursday            |
+| 12     | `'0000100'` | Friday              |
+| 13     | `'0000010'` | Saturday            |
+| 14     | `'0000001'` | Sunday              |
+| 15     | `'0000000'` | None                |
+
+### Type `Datebook`
+
+- Type: `Array.<Activity>` [See Planner](#Type-Activity)
+
+The `datebook` option is a collection of scheduled activities.
+
+Must be an array of objects that follow the following characteristics
+
+| Property      | Type      | Description                                                               |
+|---------------|-----------|---------------------------------------------------------------------------|
+| `date`        | `string`  | Scheduled date for activity, ISO format (ISO 8601) `"YYYY-MM-DD"`.        |
+| `title`       | `string`  | Activity title.                                                           |
+| `description` | `string`  | Activity description.                                                     |
+| `holiday`     | `boolean` | If activity is taken as a holiday.                                        |
+| `type`        | `string`  | Activity type, allowed values: `task`, `event`, `appointment`, `meeting`. |
+
+```javascript
+// Example
+const datebook = [{
+  date: '2021-01-20',
+  title: "Mom's birthday",
+  description: "Don't forget to buy a gift",
+  type: 'event',
+  holiday: true,
+},{
+  date: '2021-01-10',
+  title: 'Send final sales report',
+  description: "Don't forget to attach graphics",
+  type: 'task',
+  holiday: true,
+},{
+  date: new Date(2021, 0, 15).toISOString(),
+  title: 'Rick and morty season finale',
+  description: "Don't forget to order pizza",
+  type: 'task',
+  holiday: true,
+}];
+
+```
+
+### Type `Planner`
 
 - Type: `object`
 
@@ -218,12 +222,12 @@ Properties:
 
 | Name            | Type                   | Description                                                        |
 |-----------------|------------------------|--------------------------------------------------------------------|
-| `tasks`         | `Array.<Task>`         | Collection of all [Tasks](#Type-Task) for the month.               |
-| `events`        | `Array.<Event>`        | Collection of all [Events](#Type-Event) for the month.             |
-| `appointments`  | `Array.<Appointment>`  | Collection of all [Appointments](#Type-Appointment) for the month. |
-| `meetings`      | `Array.<Meeting>`      | Collection of all [Meetings](#Type-Meeting) for the month.         |
+| `tasks`         | `Array.<Task>`         | Collection of all [Task](#Type-Task) for the month.               |
+| `events`        | `Array.<Event>`        | Collection of all [Event](#Type-Event) for the month.             |
+| `appointments`  | `Array.<Appointment>`  | Collection of all [Appointment](#Type-Appointment) for the month. |
+| `meetings`      | `Array.<Meeting>`      | Collection of all [Meeting](#Type-Meeting) for the month.         |
 
-### Type `task`
+### Type `Task`
 
 - Type: `object`
 
@@ -242,7 +246,7 @@ Properties:
 | `type`        | `"task"`         | Type of scheduled activity task.          |
 | `YYMMDD`      | `Array.<number>` | Scheduled date for the task [YY, MM, DD]. |
 
-### Type `event`
+### Type `Event`
 
 - Type: `object`
 
@@ -261,7 +265,7 @@ Properties:
 | `type`        | `"event"`        | Type of scheduled activity event.          |
 | `YYMMDD`      | `Array.<number>` | Scheduled date for the event [YY, MM, DD]. |
 
-### Type `appointment`
+### Type `Appointment`
 
 - Type: `object`
 
@@ -280,7 +284,7 @@ Properties:
 | `type`        | `"appointment"`  | Type of scheduled activity appointment.          |
 | `YYMMDD`      | `Array.<number>` | Scheduled date for the appointment [YY, MM, DD]. |
 
-### Type `meeting`
+### Type `Meeting`
 
 - Type: `object`
 
