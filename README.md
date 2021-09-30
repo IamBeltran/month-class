@@ -33,7 +33,7 @@ The following table shows the corresponding days if a number is passed and its `
 
 ## Datebook option
 
-The option `datebook` is a collection of scheduled activities,
+The option `datebook` is a collection of scheduled activities, must be an array of objects that follow the following characteristics
 
 | Property      | Type      | Description                                                              |
 |---------------|-----------|--------------------------------------------------------------------------|
