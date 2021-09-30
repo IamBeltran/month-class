@@ -127,13 +127,13 @@ Description:
 
 ### days
 
-- Type `Days`
+- Type `Days` [See Days](#Type-Days)
 
 Description:
 
 ### summary
 
-- Type `Sumary`
+- Type `Sumary` [See Sumary](#Type-Sumary)
 
 Description:
 
