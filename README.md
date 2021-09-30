@@ -214,12 +214,14 @@ Ordered collection of activities of the month.
 
 An object with the properties `tasks`, `events`, `appointments` and `meetings`, each property of the object is an `array`.
 
-| Properties: Name | Type                   | Description                                                                     |
-|------------------|------------------------|---------------------------------------------------------------------------------|
-| tasks            | `Array.<Task>`         | Collection of all [Tasks](#Type-Tasks)tasks for the month.                      |
-| events           | `Array.<Event>`        | Collection of all [Events](#Type-Events)events for the month.                   |
-| appointments     | `Array.<Appointment>`  | Collection of all [Appointments](#Type-Appointments)appointments for the month. |
-| meetings         | `Array.<Meeting>`      | Collection of all [Meetings](#Type-Meetings)meetings for the month.             |
+Properties:
+
+| Name          | Type                   | Description                                                         |
+|---------------|------------------------|---------------------------------------------------------------------|
+| tasks         | `Array.<Task>`         | Collection of all [Tasks](#Type-Tasks) for the month.               |
+| events        | `Array.<Event>`        | Collection of all [Events](#Type-Events) for the month.             |
+| appointments  | `Array.<Appointment>`  | Collection of all [Appointments](#Type-Appointments) for the month. |
+| meetings      | `Array.<Meeting>`      | Collection of all [Meetings](#Type-Meetings) for the month.         |
 
 ## USAGE
 
