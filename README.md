@@ -216,8 +216,8 @@ An object with the properties `tasks`, `events`, `appointments` and `meetings`, 
 
 Properties:
 
-| Name            | Type                   | Description                                                         |
-|-----------------|------------------------|---------------------------------------------------------------------|
+| Name            | Type                   | Description                                                        |
+|-----------------|------------------------|--------------------------------------------------------------------|
 | `tasks`         | `Array.<Task>`         | Collection of all [Tasks](#Type-Task) for the month.               |
 | `events`        | `Array.<Event>`        | Collection of all [Events](#Type-Event) for the month.             |
 | `appointments`  | `Array.<Appointment>`  | Collection of all [Appointments](#Type-Appointment) for the month. |
