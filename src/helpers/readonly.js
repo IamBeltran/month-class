@@ -28,7 +28,8 @@ const mapWeekend = new Map([
   [11, '0001000'], // 11 Thursday
   [12, '0000100'], // 12 Friday
   [13, '0000010'], // 13 Saturday
-  [14, '0000000'], // 14 None
+  [14, '0000001'], // 14 Saturday
+  [15, '0000000'], // 15 None
 ]);
 
 /**
@@ -46,7 +47,7 @@ const weekdays = [1, 2, 3, 4, 5, 6, 0];
  * weekends. The string contains only 0 or 1 and length 7 where 0 are the
  * workdays and 1 the weekends.
  *
- * `value` must be a `string` or integer `number` between 0 to 12. If a `string`
+ * `value` must be a `string` or integer `number` between 0 to 15. If a `string`
  * is passed, the string must match to regex `/^[0-1]{7}$/`.
  *
  * @private
