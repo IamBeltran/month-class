@@ -12,9 +12,9 @@ The class `Month` requires an optional parameter `options`, must be an `object` 
 
 The `options.current` value must be type `date`, it is used as a base to identify the days that have `elapsed`, the `remaining` days of the month and `current` day, the `default` value is `new Date()`.
 
-The `options.weekend` value must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`, the `default` value is `0`, [See Weekend option](#Type-WeekendOption).
+The `options.weekend` value must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`, the `default` value is `0`. [See Weekend option](#Type-WeekendOption).
 
-The `options.datebook` value must be an object `array`, that represents a collection of scheduled activities from a Datebook, the default value is `[]`, [See Datebook option](#Type-Datebook).
+The `options.datebook` value must be an object `array`, that represents a collection of scheduled activities from a Datebook, the default value is `[]`. [See Datebook option](#Type-Datebook).
 
 Parameters Description:
 
@@ -105,37 +105,49 @@ Its value is like `Date.prototype.getMonth()`.
 
 - Type `Planner` [See Planner](#Type-Planner)
 
-Description: Ordered collection of plans of the month.
+Description: Ordered collection of activities of the month.
+
+An object with the properties `tasks`, `events`, `appointments` and `meetings`, each property of the object is an `array`.
 
 ### weekends
 
 - Type `Array.<number>`
 
-Description:
+Description: The month days that are weekends.
+
+A number `array` that value of elements is like `Date.prototype.getDate()`.
 
 ### holidays
 
 - Type `Array.<number>`
 
-Description:
+Description: The month days that are holidays.
+
+A number `array` that value of elements is like `Date.prototype.getDate()`.
 
 ### nonworkdays
 
 - Type `Array.<number>`
 
-Description:
+Description: The month days that are non workdays.
+
+A number array that value of elements is like a `Date.prototype.getDate()`.
 
 ### days
 
 - Type `Days` [See Days](#Type-Days)
 
-Description:
+Description: The month days.
+
+An object `array`, each element of the array contains information about a day of the month, If it is a weekend or a work day, if it has already elapsed, it is the current day, week number.
 
 ### summary
 
 - Type `Sumary` [See Sumary](#Type-Sumary)
 
-Description:
+Description: Summary of the month.
+
+An object with the properties `dates`, `days`, `weeks`, and `workdays`.
 
 ## Instance Methods
 
