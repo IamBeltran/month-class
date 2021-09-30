@@ -2,15 +2,15 @@
 
 ![Logo](docs/LOGO.png)
 
-Month class, manages information of the month from a given date.
+The `Month` class manages the information of a month from given date, such as number of weeks, number of work days, number of weekend.
 
 ## Weekend option
 
 The 'weekend' option indicates the days of the week that are taken as the weekend in the month.
 
-Must be a `string` or integer `number` between 0 to 15. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`, if want to indicate that weekends are Fridays, the value must be `"0000100"`.
+Must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`. For example if want to indicate that weekends are Fridays, the value must be `"0000100"`.
 
-The following table shows the corresponding days if a number is passed and its string equivalent.
+The following table shows the corresponding days if a number is passed and its `string` equivalent.
 
 | Number | String      | Weekday             |
 |--------|-------------|---------------------|
@@ -53,6 +53,12 @@ const datebook = [{
   date: '2021-01-10',
   title: 'Send final sales report',
   description: "Don't forget to attach graphics",
+  type: 'task',
+  holiday: true,
+},{
+  date: new Date(2021, 0, 15).toISOString(),
+  title: 'Rick and morty season finale',
+  description: "Don't forget to order pizza",
   type: 'task',
   holiday: true,
 }];
