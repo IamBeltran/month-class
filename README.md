@@ -12,20 +12,20 @@ The class `Month` requires an optional parameter `options`, must be an `object` 
 
 The `options.current` value must be type `date`, it is used as a base to identify the days that have `elapsed`, the `remaining` days of the month and `current` day, the `default` value is `new Date()`.
 
-The `options.weekend` value must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`, the `default` value is `0`. [See Weekend option](#Type-WeekendOption).
+The `options.weekend` value must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`, the `default` value is `0`.
 
-The `options.datebook` value must be an object `array`, that represents a collection of scheduled activities from a Datebook, the default value is `[]`. [See Datebook option](#Type-Datebook).
+The `options.datebook` value must be an object `array`, that represents a collection of scheduled activities from a Datebook, the default value is `[]`.
 
 Parameters Description:
 
-| Name               | Type            | Attributes                | Description                        |
-|--------------------|-----------------|---------------------------|------------------------------------|
-| `options`          | `object`        | `[optional]`              | Month class options.               |
-| `options.current`  | `Date`          | `[optional = new Date()]` | Current date of month.             |
-| `options.weekend`  | `WeekendOption` | `[optional = 0]`          | Option to specify weekends.        |
-| `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. |
+| Name               | Type            | Attributes                | Description                                                                |
+|--------------------|-----------------|---------------------------|----------------------------------------------------------------------------|
+| `options`          | `object`        | `[optional]`              | Month class options.                                                       |
+| `options.current`  | `Date`          | `[optional = new Date()]` | Current date of month.                                                     |
+| `options.weekend`  | `WeekendOption` | `[optional = 0]`          | Option to specify weekends. [See Weekend option](#Type-WeekendOption).     |
+| `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. [See Datebook option](#Type-Datebook).  |
 
-### Throws
+***Throws***
 
 - If `options.current` is not instance Date, Type `MonthError`.
 - If `options.weekend` is not a valid weekend option, Type `MonthError`.
@@ -65,7 +65,7 @@ const month = new Month({
 });
 ```
 
-## Instance Properties
+## Instance properties
 
 ### YYMMDD `Readonly`
 
@@ -139,7 +139,7 @@ A number array that value of elements is like a `Date.prototype.getDate()`.
 
 Description: The month days.
 
-An object `array`, each element of the array contains information about a day of the month, If it is a weekend or a work day, if it has already elapsed, it is the current day, week number.
+An object `array`, every array element contains information about a day of the month, If it is a weekend or a work day, if it has already elapsed, it is the current day, week number.
 
 ### summary
 
@@ -149,7 +149,38 @@ Description: Summary of the month.
 
 An object with the properties `dates`, `days`, `weeks`, and `workdays`.
 
-## Instance Methods
+## Instance methods
+
+### addDatebook(datebook) → {this}
+
+The datebook value must be an object array, that represents a collection of scheduled activities from a Datebook.
+
+Parameters Description:
+
+| Name        | Type        | Attributes        | Description                                                               |
+|-------------|-------------|-------------------|---------------------------------------------------------------------------|
+| `datebook`  | `Datebook`  | `[optional = []]` | Scheduled activities of the month. [See Datebook option](#Type-Datebook). |
+
+***Throws***
+
+- If `datebook` is not an array, Type `MonthError`.
+- If any `datebook` elements is not a valid object, Type `MonthError`.
+
+### Example
+
+```javascript
+const month = new Month();
+
+month.addDatebook([
+  {
+    date: '2021-01-10',
+    title: 'Send final sales report',
+    description: "Don't forget to attach graphics",
+    type: 'task',
+    holiday: true,
+  },
+]);
+```
 
 ## Type Definitions
 
@@ -232,7 +263,7 @@ const datebook = [{
 
 Ordered collection of activities of the month.
 
-An object with the properties `tasks`, `events`, `appointments` and `meetings`, each property of the object is an `array`.
+An `object` with the properties `tasks`, `events`, `appointments` and `meetings`.
 
 Properties:
 
@@ -249,7 +280,7 @@ Properties:
 
 A task-type scheduled activity.
 
-An object with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
+An `object` with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
 
 Properties:
 
@@ -268,7 +299,7 @@ Properties:
 
 A event-type scheduled activity.
 
-An object with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
+An `object` with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
 
 Properties:
 
@@ -287,7 +318,7 @@ Properties:
 
 A appointment-type scheduled activity.
 
-An object with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
+An `object` with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
 
 Properties:
 
@@ -306,7 +337,7 @@ Properties:
 
 A meeting-type scheduled activity.
 
-An object with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
+An `object` with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
 
 Properties:
 
@@ -318,6 +349,18 @@ Properties:
 | `holiday`     | `boolean`         | If the meeting is taken as a holiday.        |
 | `type`        | `"meeting"`       | Type of scheduled activity meeting.          |
 | `YYMMDD`      | `Array.<number>`  | Scheduled date for the meeting [YY, MM, DD]. |
+
+### Type `Days`
+
+- Type: `Array.<Day>` [See Activity](#Type-Day)
+
+Collection of activities of the month.
+
+### Type `Day`
+
+- Type: `Day`
+
+Collection of activities of the month.
 
 ## USAGE
 
