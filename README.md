@@ -1,12 +1,35 @@
-﻿# Month
+﻿# Class: Month
 
 ![Logo](docs/LOGO.png)
 
 The `Month` class manages the information of a month from given date, such as number of weeks, number of work days, number of weekend.
 
-## Weekend option
+## Constructor
 
-The 'weekend' option indicates the days of the week that are taken as the weekend in the month.
+`new BrowserWindow([options])`
+
+Creates an instance of Month.
+
+The class `Month` requires an optional parameter `options`, must be an `object` with the properties `current`, `weekend` and `datebook`.
+
+The `options.current` value must be type `date`, it is used as a base to identify the days that have `elapsed`, the `remaining` days of the month and `current` day, the `default` value is `new Date()`.
+
+The `options.weekend` value must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`, the `default` value is `0`.
+
+The `options.datebook` value must be an object `array`, that represents a collection of scheduled activities from a Datebook, the default value is `[]`.
+
+Parameters Description:
+
+| Name               | Type            | Attributes                | Description                                                    |
+|--------------------|-----------------|---------------------------|----------------------------------------------------------------|
+| `options`          | `object`        | `[optional]`              | Month class options.                                           |
+| `options.current`  | `Date`          | `[optional = new Date()]` | Current date of month.                                         |
+| `options.weekend`  | `WeekendOption` | `[optional = 0]`          | Option to specify weekends. [See](### Weekend option).         |
+| `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. [See](### Datebook option). |
+
+### Weekend option
+
+The `weekend` option indicates the days of the week that are taken as the weekend in the month.
 
 Must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`. For example if want to indicate that weekends are Fridays, the value must be `"0000100"`.
 
@@ -31,9 +54,11 @@ The following table shows the corresponding days if a number is passed and its `
 | 14     | `'0000001'` | Sunday              |
 | 15     | `'0000000'` | None                |
 
-## Datebook option
+### Datebook option
 
-The option `datebook` is a collection of scheduled activities, must be an array of objects that follow the following characteristics
+The `datebook` option is a collection of scheduled activities.
+
+Must be an array of objects that follow the following characteristics
 
 | Property      | Type      | Description                                                              |
 |---------------|-----------|--------------------------------------------------------------------------|
