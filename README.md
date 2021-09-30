@@ -4,9 +4,7 @@
 
 The `Month` class manages the information of a month from given date, such as number of weeks, number of work days, number of weekend.
 
-## Constructor
-
-`new BrowserWindow([options])`
+## Constructor `new Month([options])`
 
 Creates an instance of Month.
 
@@ -132,6 +130,78 @@ const datebook = [{
 
 ```
 
-<!-- Datebook activity schema -->
+## Instance Properties
+
+### YYMMDD
+
+- Type `Array.<number>`
+
+Description:
+
+### WEEKEND
+
+- Type `Array.<number>`
+
+Description:
+
+### SCE
+
+- Type `Array.<number>`
+
+Description:
+
+### year
+
+- Type `number`
+
+Description:
+
+### number
+
+- Type `number`
+
+Description:
+
+### planner
+
+- Type `Planner`
+
+Description:
+
+### weekends
+
+- Type `Array.<number>`
+
+Description:
+
+
+### holidays
+
+- Type `Array.<number>`
+
+Description:
+
+
+### nonworkdays
+
+- Type `Array.<number>`
+
+Description:
+
+### days
+
+- Type `Days`
+
+Description:
+
+### summary
+
+- Type `Sumary`
+
+Description:
+
+## Instance Methods
 
 ## USAGE
+
+## TODO
