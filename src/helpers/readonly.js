@@ -86,7 +86,7 @@ const createYYMMDD = date => [date.getFullYear(), date.getMonth(), date.getDate(
  * represent days of the week that are not working days and takes as weekend.
  * Where 0 represents Sunday and 1 monday, like as `Date.prototype.getDay()`.
  *
- * The `option` parameter must be an integer number between 0 and 14 or a
+ * The `option` parameter must be an integer number between 0 and 15 or a
  * `string` that match the regex `/^[0-1]{7}$/` (e.g. '0000001'). The first
  * digit in the string represents Monday and the last digit represents Sunday.
  * The zeros represent the working days and the ones represent the non-working
