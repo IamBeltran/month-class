@@ -27,6 +27,46 @@ Parameters Description:
 | `options.weekend`  | `WeekendOption` | `[optional = 0]`          | Option to specify weekends. [See](#Weekend-option).         |
 | `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. [See](#Datebook-option). |
 
+### Throws
+
+- If `options.current` is not instance Date, Type `MonthError`.
+- If `options.weekend` is not a valid weekend option, Type `MonthError`.
+- If `options.datebook` is not an array, Type `MonthError`.
+- If any `options.datebook` elements is not a valid object, Type `MonthError`.
+
+### Examples
+
+```javascript
+const month = new Month();
+
+const month = new Month({
+  current: new Date(2021, 0, 15),
+  weekend: 0,
+  datebook: [
+    {
+      date: '2021-01-20',
+      title: "Mom's birthday",
+      description: "Don't forget to buy a gift",
+      type: 'event',
+      holiday: true,
+    },
+    {
+      date: '2021-01-10',
+      title: 'Send final sales report',
+      description: "Don't forget to attach graphics",
+      type: 'task',
+      holiday: true,
+    },
+      date: new Date(2021, 0, 15).toISOString(),
+      title: 'Rick and morty season finale',
+      description: "Don't forget to order pizza",
+      type: 'task',
+      holiday: true,
+    }
+  ],
+});
+```
+
 ### Weekend option
 
 The `weekend` option indicates the days of the week that are taken as the weekend in the month.
