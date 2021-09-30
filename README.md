@@ -172,13 +172,17 @@ The following table shows the corresponding days if a number is passed and its `
 
 ### Type `Datebook`
 
-- Type: `Array.<Activity>` [See Planner](#Type-Activity)
+- Type: `Array.<Activity>` [See Activity](#Type-Activity)
 
 The `datebook` option is a collection of scheduled activities.
 
 Must be an array of objects that follow the following characteristics
 
-| Property      | Type      | Description                                                               |
+### Type `Activity`
+
+Properties:
+
+| Name          | Type      | Description                                                               |
 |---------------|-----------|---------------------------------------------------------------------------|
 | `date`        | `string`  | Scheduled date for activity, ISO format (ISO 8601) `"YYYY-MM-DD"`.        |
 | `title`       | `string`  | Activity title.                                                           |
