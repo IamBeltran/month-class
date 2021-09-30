@@ -18,12 +18,12 @@ The `options.datebook` value must be an object `array`, that represents a collec
 
 Parameters Description:
 
-| Name               | Type            | Attributes                | Description                                                 |
-|--------------------|-----------------|---------------------------|-------------------------------------------------------------|
-| `options`          | `object`        | `[optional]`              | Month class options.                                        |
-| `options.current`  | `Date`          | `[optional = new Date()]` | Current date of month.                                      |
-| `options.weekend`  | `WeekendOption` | `[optional = 0]`          | Option to specify weekends. [See](#Weekend-option).         |
-| `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. [See](#Datebook-option). |
+| Name               | Type            | Attributes                | Description                                                                  |
+|--------------------|-----------------|---------------------------|------------------------------------------------------------------------------|
+| `options`          | `object`        | `[optional]`              | Month class options.                                                         |
+| `options.current`  | `Date`          | `[optional = new Date()]` | Current date of month.                                                       |
+| `options.weekend`  | `WeekendOption` | `[optional = 0]`          | Option to specify weekends. [See Weekend option](#Weekend-option).           |
+| `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. [See Datebook-option](#Datebook-option).  |
 
 ### Throws
 
