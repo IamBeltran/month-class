@@ -132,19 +132,19 @@ const datebook = [{
 
 ## Instance Properties
 
-### YYMMDD
+### YYMMDD `Readonly`
 
 - Type `Array.<number>`
 
 Description:
 
-### WEEKEND
+### WEEKEND `Readonly`
 
 - Type `Array.<number>`
 
 Description:
 
-### SCE
+### SCE `Readonly`
 
 - Type `Array.<number>`
 
@@ -154,19 +154,23 @@ Description:
 
 - Type `number`
 
-Description:
+Description: The year of the month.
+
+Its value is like `Date.prototype.getFullYear()`.
 
 ### number
 
 - Type `number`
 
-Description:
+Description: The month number.
+
+Its value is like `Date.prototype.getMonth()`.
 
 ### planner
 
-- Type `Planner`
+- Type `Planner` [See Planner](#Planner)
 
-Description:
+Description: Ordered collection of plans of the month.
 
 ### weekends
 
@@ -174,13 +178,11 @@ Description:
 
 Description:
 
-
 ### holidays
 
 - Type `Array.<number>`
 
 Description:
-
 
 ### nonworkdays
 
@@ -199,6 +201,10 @@ Description:
 - Type `Sumary`
 
 Description:
+
+#### Planner
+
+Hi
 
 ## Instance Methods
 
