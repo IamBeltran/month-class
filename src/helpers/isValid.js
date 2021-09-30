@@ -84,7 +84,7 @@ const isValidPlan = plan => {
  *
  */
 const isValidWeekend = weekend => {
-  const isByNumber = utils.isIntNumber(weekend) && weekend >= 0 && weekend <= 14;
+  const isByNumber = utils.isIntNumber(weekend) && weekend >= 0 && weekend <= 15;
   const isByPattern = regexWeekend.test(weekend);
   return isByNumber || isByPattern;
 };
