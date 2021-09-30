@@ -14,13 +14,13 @@
     "doc": "docs",
     "test": "test"
   },
-  "homepage": "https://github.com/IamBeltran/month#readme",
+  "homepage": "https://github.com/IamBeltran/month-class#readme",
   "bugs": {
-    "url": "https://github.com/IamBeltran/month/issues"
+    "url": "https://github.com/IamBeltran/month-class/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IamBeltran/month.git"
+    "url": "git+https://github.com/IamBeltran/month-class.git"
   },
   "author": {
     "name": "Victor Giovanni Beltrán Rodríguez",
