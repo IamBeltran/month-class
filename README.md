@@ -98,13 +98,13 @@ The `datebook` option is a collection of scheduled activities.
 
 Must be an array of objects that follow the following characteristics
 
-| Property      | Type      | Description                                                              |
-|---------------|-----------|--------------------------------------------------------------------------|
-| `date`        | `string`  | Scheduled date for activity, ISO format (ISO 8601) `"YYYY-MM-DD"`        |
-| `title`       | `string`  | Activity title                                                           |
-| `description` | `string`  | Activity description                                                     |
-| `holiday`     | `boolean` | If activity is taken as a holiday                                        |
-| `type`        | `string`  | Activity type, allowed values: `task`, `event`, `appointment`, `meeting` |
+| Property      | Type      | Description                                                               |
+|---------------|-----------|---------------------------------------------------------------------------|
+| `date`        | `string`  | Scheduled date for activity, ISO format (ISO 8601) `"YYYY-MM-DD"`.        |
+| `title`       | `string`  | Activity title.                                                           |
+| `description` | `string`  | Activity description.                                                     |
+| `holiday`     | `boolean` | If activity is taken as a holiday.                                        |
+| `type`        | `string`  | Activity type, allowed values: `task`, `event`, `appointment`, `meeting`. |
 
 ```javascript
 // Example
@@ -241,6 +241,25 @@ Properties:
 | `holiday`     | `boolean`        | If the task is taken as a holiday.        |
 | `type`        | `"task"`         | Type of scheduled activity task.          |
 | `YYMMDD`      | `Array.<number>` | Scheduled date for the task [YY, MM, DD]. |
+
+### Type Event
+
+- Type: `object`
+
+A event-type scheduled activity.
+
+An object with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
+
+Properties:
+
+| Name          | Type             | Description                                |
+|---------------|------------------|--------------------------------------------|
+| `date`        | `string`         | Scheduled date for the event "YYYY-MM-DD"  |
+| `title`       | `string`         | Event title.                               |
+| `description` | `string`         | Event description.                         |
+| `holiday`     | `boolean`        | If the Event is taken as a holiday.        |
+| `type`        | `"event"`        | Type of scheduled activity event.          |
+| `YYMMDD`      | `Array.<number>` | Scheduled date for the event [YY, MM, DD]. |
 
 ## USAGE
 
