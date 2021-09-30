@@ -23,7 +23,7 @@ Parameters Description:
 | `options`          | `object`        | `[optional]`              | Month class options.                                                         |
 | `options.current`  | `Date`          | `[optional = new Date()]` | Current date of month.                                                       |
 | `options.weekend`  | `WeekendOption` | `[optional = 0]`          | Option to specify weekends. [See Weekend option](#Weekend-option).           |
-| `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. [See Datebook-option](#Datebook-option).  |
+| `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. [See Datebook option](#Datebook-option).  |
 
 ### Throws
 
@@ -223,7 +223,7 @@ Properties:
 | `appointments`  | `Array.<Appointment>`  | Collection of all [Appointments](#Type-Appointment) for the month. |
 | `meetings`      | `Array.<Meeting>`      | Collection of all [Meetings](#Type-Meeting) for the month.         |
 
-### Type Task
+### Type `task`
 
 - Type: `object`
 
@@ -242,7 +242,7 @@ Properties:
 | `type`        | `"task"`         | Type of scheduled activity task.          |
 | `YYMMDD`      | `Array.<number>` | Scheduled date for the task [YY, MM, DD]. |
 
-### Type Event
+### Type `event`
 
 - Type: `object`
 
@@ -260,6 +260,44 @@ Properties:
 | `holiday`     | `boolean`        | If the Event is taken as a holiday.        |
 | `type`        | `"event"`        | Type of scheduled activity event.          |
 | `YYMMDD`      | `Array.<number>` | Scheduled date for the event [YY, MM, DD]. |
+
+### Type `appointment`
+
+- Type: `object`
+
+A appointment-type scheduled activity.
+
+An object with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
+
+Properties:
+
+| Name          | Type             | Description                                      |
+|---------------|------------------|--------------------------------------------------|
+| `date`        | `string`         | Scheduled date for the appointment "YYYY-MM-DD"  |
+| `title`       | `string`         | Appointment title.                               |
+| `description` | `string`         | Appointment description.                         |
+| `holiday`     | `boolean`        | If the appointment is taken as a holiday.        |
+| `type`        | `"appointment"`  | Type of scheduled activity appointment.          |
+| `YYMMDD`      | `Array.<number>` | Scheduled date for the appointment [YY, MM, DD]. |
+
+### Type `meeting`
+
+- Type: `object`
+
+A meeting-type scheduled activity.
+
+An object with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
+
+Properties:
+
+| Name          | Type              | Description                                  |
+|---------------|-------------------|----------------------------------------------|
+| `date`        | `string`          | Scheduled date for the meeting "YYYY-MM-DD"  |
+| `title`       | `string`          | Meeting title.                               |
+| `description` | `string`          | Meeting description.                         |
+| `holiday`     | `boolean`         | If the meeting is taken as a holiday.        |
+| `type`        | `"meeting"`       | Type of scheduled activity meeting.          |
+| `YYMMDD`      | `Array.<number>`  | Scheduled date for the meeting [YY, MM, DD]. |
 
 ## USAGE
 
