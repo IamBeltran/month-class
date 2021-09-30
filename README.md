@@ -1,3 +1,59 @@
 ﻿# Month
 
 ![Logo](docs/LOGO.png)
+
+Month class, manages information of the month from a given date.
+
+## Weekend option
+
+The weekend option must be a `string` or integer `number` between 0 to 12. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`.
+
+| Number | String      | Weekday             |
+|--------|-------------|---------------------|
+| 0      | `'0000011'` | Saturday, Sunday    |
+| 1      | `'1000001'` | Sunday, Monday      |
+| 2      | `'1100000'` | Monday, Tuesday     |
+| 3      | `'0110000'` | Tuesday, Wednesday  |
+| 4      | `'0011000'` | Wednesday, Thursday |
+| 5      | `'0001100'` | Thursday, Friday    |
+| 6      | `'0000110'` | Friday, Saturday    |
+| 7      | `'0000001'` | Sunday              |
+| 8      | `'1000000'` | Monday              |
+| 9      | `'0100000'` | Tuesday             |
+| 10     | `'0010000'` | Wednesday           |
+| 11     | `'0001000'` | Thursday            |
+| 12     | `'0000100'` | Friday              |
+| 13     | `'0000010'` | Saturday            |
+| 14     | `'0000000'` | None                |
+
+## Datebook option
+
+| Property    | Type      | Description                                                              |
+|-------------|-----------|--------------------------------------------------------------------------|
+| date        | `string`  | Scheduled date for activity, ISO format (ISO 8601) `"YYYY-MM-DD"`        |
+| title       | `string`  | Activity title                                                           |
+| description | `string`  | Activity description                                                     |
+| holiday     | `boolean` | If activity is taken as a holiday                                        |
+| type        | `string`  | Activity type, allowed values: `task`, `event`, `appointment`, `meeting` |
+
+```javascript
+// Example
+const datebook = [{
+  date: '2021-01-20',
+  title: "Mom's birthday",
+  description: "Don't forget to buy a gift",
+  type: 'event',
+  holiday: true,
+},{
+  date: '2021-01-10',
+  title: 'Send final sales report',
+  description: "Don't forget to attach graphics",
+  type: 'task',
+  holiday: true,
+}];
+
+```
+
+<!-- Datebook activity schema -->
+
+## USAGE
