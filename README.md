@@ -25,7 +25,7 @@ Parameters Description:
 | `options.weekend`  | `WeekendOption` | `[optional = 0]`          | Option to specify weekends. [See Weekend option](#Type-WeekendOption).     |
 | `options.datebook` | `Datebook`      | `[optional = []]`         | Scheduled activities of the month. [See Datebook option](#Type-Datebook).  |
 
-***Throws***
+Throws:
 
 - If `options.current` is not instance Date, Type `MonthError`.
 - If `options.weekend` is not a valid weekend option, Type `MonthError`.
@@ -105,9 +105,9 @@ Its value is like `Date.prototype.getMonth()`.
 
 - Type `Planner` [See Planner](#Type-Planner)
 
-Description: Ordered collection of activities of the month.
+Description: Collection of activities of the month, organized by type.
 
-An object with the properties `tasks`, `events`, `appointments` and `meetings`, each property of the object is an `array`.
+An `object` with the properties `tasks`, `events`, `appointments` and `meetings`, every property of the object is an `array`.
 
 ### weekends
 
@@ -131,13 +131,13 @@ A number `array` that value of elements is like `Date.prototype.getDate()`.
 
 Description: The month days that are non workdays.
 
-A number array that value of elements is like a `Date.prototype.getDate()`.
+A number `array` that value of elements is like a `Date.prototype.getDate()`.
 
 ### days
 
 - Type `Days` [See Days](#Type-Days)
 
-Description: The month days.
+Description: The details of the days of the month, a collection of information about all the days of the month.
 
 An object `array`, every array element contains information about a day of the month, If it is a weekend or a work day, if it has already elapsed, it is the current day, week number.
 
@@ -145,7 +145,7 @@ An object `array`, every array element contains information about a day of the m
 
 - Type `Sumary` [See Sumary](#Type-Sumary)
 
-Description: Summary of the month.
+Description: Summary of the month with information on weeks, working days and dates.
 
 An object with the properties `dates`, `days`, `weeks`, and `workdays`.
 
@@ -161,7 +161,7 @@ Parameters Description:
 |-------------|-------------|-------------------|---------------------------------------------------------------------------|
 | `datebook`  | `Datebook`  | `[optional = []]` | Scheduled activities of the month. [See Datebook option](#Type-Datebook). |
 
-***Throws***
+Throws:
 
 - If `datebook` is not an array, Type `MonthError`.
 - If any `datebook` elements is not a valid object, Type `MonthError`.
@@ -219,9 +219,15 @@ The following table shows the corresponding days if a number is passed and its `
 
 The `datebook` option is a collection of scheduled activities.
 
-Must be an array of objects that follow the following characteristics
+Must be an object `array`, every object must have the properties `date`, `title`, `description`, `holiday` and `type`.
 
 ### Type `Activity`
+
+- Type: `Object`
+
+An activity scheduled on a datebook.
+
+An `Object` that contains the details of a task, event, appointment or meeting.
 
 Properties:
 
@@ -259,28 +265,28 @@ const datebook = [{
 
 ### Type `Planner`
 
-- Type: `object`
+- Type: `Object`
 
-Ordered collection of activities of the month.
+Collection of activities of the month.
 
-An `object` with the properties `tasks`, `events`, `appointments` and `meetings`.
+An `Object` with the properties `tasks`, `events`, `appointments` and `meetings`, every property of the object is an array.
 
 Properties:
 
 | Name            | Type                   | Description                                                        |
 |-----------------|------------------------|--------------------------------------------------------------------|
-| `tasks`         | `Array.<Task>`         | Collection of all [Task](#Type-Task) for the month.               |
-| `events`        | `Array.<Event>`        | Collection of all [Event](#Type-Event) for the month.             |
-| `appointments`  | `Array.<Appointment>`  | Collection of all [Appointment](#Type-Appointment) for the month. |
-| `meetings`      | `Array.<Meeting>`      | Collection of all [Meeting](#Type-Meeting) for the month.         |
+| `tasks`         | `Array.<Task>`         | Collection of all [Task](#Type-Task) for the month.                |
+| `events`        | `Array.<Event>`        | Collection of all [Event](#Type-Event) for the month.              |
+| `appointments`  | `Array.<Appointment>`  | Collection of all [Appointment](#Type-Appointment) for the month.  |
+| `meetings`      | `Array.<Meeting>`      | Collection of all [Meeting](#Type-Meeting) for the month.          |
 
 ### Type `Task`
 
-- Type: `object`
+- Type: `Object`
 
 A task-type scheduled activity.
 
-An `object` with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
+An `Object` that contains the details of a task, with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
 
 Properties:
 
@@ -295,11 +301,11 @@ Properties:
 
 ### Type `Event`
 
-- Type: `object`
+- Type: `Object`
 
-A event-type scheduled activity.
+An event-type scheduled activity.
 
-An `object` with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
+An `Object` that contains the details of an event, with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
 
 Properties:
 
@@ -354,13 +360,31 @@ Properties:
 
 - Type: `Array.<Day>` [See Activity](#Type-Day)
 
-Collection of activities of the month.
+The details of the days of the month, a collection of information about all the days of the month.
+
+An object `array`, every `array` element contains information about a day of the month, If it is a weekend or a work day, if it has already elapsed, it is the current day, week number.
 
 ### Type `Day`
 
 - Type: `Day`
 
-Collection of activities of the month.
+Details of a day.
+
+An `Object` with the properties `day`, `date`, `weekday`, `type`, `week`, `workday`, `isWorkday`, `isWeekend`, and `scheduled`.
+
+Properties:
+
+| Name        | Type              | Description                                                   |
+|-------------|-------------------|---------------------------------------------------------------|
+| `day`       | `number`          | Day of the month.                                             |
+| `date`      | `Array.<number>`  | The date of the day `[YY, MM, DD]`.                           |
+| `weekday`   | `number`          | The day of the week, value is like `Date.prototype.getDay()`. |
+| `type`      | `string`          | `elapsed`, `current`, `remaining`.                            |
+| `week`      | `number`          | Week number of the month.                                     |
+| `workday`   | `number`          | Workday number of the month.                                  |
+| `isWorkday` | `boolean`         | If the day is a work day.                                     |
+| `isWeekend` | `boolean`         | If the day is a weekend.                                      |
+| `scheduled` | `Scheduled`       | Number of the activities of a day.                            |
 
 ## USAGE
 
