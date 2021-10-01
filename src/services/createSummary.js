@@ -47,16 +47,14 @@ const createSummary = ({ YYMMDD, nonworkdays }) => {
 
   // TEMPORARY
   const temporary = new Date(YY, MM, 1);
-  const firstWeekdayMonth = startMonth.getDay();
-  const startINSunday = firstWeekdayMonth === 0;
-  const startINNonworkdays = nonworkdays.includes(1);
+  const firstWeekday = startMonth.getDay();
+  const startINSunday = firstWeekday === 0;
   const startWeek = startINSunday ? 0 : 1;
-  const startWorkday = startINNonworkdays ? 0 : 1;
 
   let CURRENT_WEEK = startWeek;
   let TOTAL_WEEKS = startWeek;
-  let CURRENT_WORKDAY = startWorkday;
-  let TOTAL_WORKDAYS = startWorkday;
+  let CURRENT_WORKDAY = 0;
+  let TOTAL_WORKDAYS = 0;
 
   for (let index = 1; index <= totalDays; index += 1) {
     temporary.setDate(index);
