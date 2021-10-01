@@ -79,6 +79,7 @@ typings/
 
 # production
 /build
+/dist
 
 # next.js build output
 .next
