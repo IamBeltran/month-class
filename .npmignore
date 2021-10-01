@@ -1,25 +1,39 @@
 # VERSION FILE 1.0.0
 
-# HUSKY FILES
+# node_modules directory
+node_modules
+
+# vscode directory
+.vscode/
+
+# development directory
+development/
+
+# notes directory
+notes/
+
+# docs files
+docs/GITHUB.md
+
+# husky files
 .husky
 .huskyrc
 
-# GIT FILES
+# git files
 .gitattributes
 .gitignore
 COMMIT_EDITMSG
 
-# ESLINT FILES
+# eslint files
 .eslintignore
 .eslintrc
 .eslintrc.*
 
-# PRETTIER FILES
+# prettier files
 .prettierignore
 .prettierrc
 .prettierrc.json
 
-node_modules
 .babelrc
 .editorconfig
 .lintstagedrc
@@ -30,7 +44,7 @@ commitlint.config.js
 gulpfile.js
 jest.config.*
 jsdoc.json
-LICENSE
+
 nodemon.json
 package-lock.json
 yarn.lock
