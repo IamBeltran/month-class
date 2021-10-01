@@ -19,7 +19,6 @@ const path = require('path');
 // ━━	EXPORT MODULE	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 module.exports = {
   mode: 'production',
-  // entry: './index.js',
   entry: `${__dirname}/src/index`,
   target: 'web',
   output: {
