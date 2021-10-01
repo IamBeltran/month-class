@@ -4,6 +4,8 @@
 
 The `Month` class manages the information of a month from given date, such as number of weeks, number of work days, number of weekend.
 
+## USAGE
+
 ## Constructor `new Month([options])`
 
 Creates an instance of Month.
@@ -159,14 +161,14 @@ Parameters Description:
 
 | Name        | Type        | Attributes        | Description                                                               |
 |-------------|-------------|-------------------|---------------------------------------------------------------------------|
-| `datebook`  | `Datebook`  | `[optional = []]` | Scheduled activities of the month. [See Datebook option](#Type-Datebook). |
+| `datebook`  | `Datebook`  |                   | Scheduled activities of the month. [See Datebook option](#Type-Datebook). |
 
 Throws:
 
 - If `datebook` is not an array, Type `MonthError`.
 - If any `datebook` elements is not a valid object, Type `MonthError`.
 
-### Example
+#### Example
 
 ```javascript
 const month = new Month();
@@ -188,7 +190,7 @@ month.addDatebook([
 
 - Type: `number|string`
 
-The `weekend` option indicates the days of the week that are taken as the weekend in the month.
+Description: The `weekend` option indicates the days of the week that are taken as the weekend in the month.
 
 Must be a `string` or integer `number` between `0` to `15`. If a `string` is passed, the string must match to regex `/^[0-1]{7}$/`. For example if want to indicate that weekends are Fridays, the value must be `"0000100"`.
 
@@ -217,7 +219,7 @@ The following table shows the corresponding days if a number is passed and its `
 
 - Type: `Array.<Activity>` [See Activity](#Type-Activity)
 
-The `datebook` option is a collection of scheduled activities.
+Description: The `datebook` option is a collection of scheduled activities.
 
 Must be an object `array`, every object must have the properties `date`, `title`, `description`, `holiday` and `type`.
 
@@ -225,7 +227,7 @@ Must be an object `array`, every object must have the properties `date`, `title`
 
 - Type: `Object`
 
-An activity scheduled on a datebook.
+Description: An activity scheduled on a datebook.
 
 An `Object` that contains the details of a task, event, appointment or meeting.
 
@@ -267,7 +269,7 @@ const datebook = [{
 
 - Type: `Object`
 
-Collection of activities of the month.
+Description: Collection of activities of the month.
 
 An `Object` with the properties `tasks`, `events`, `appointments` and `meetings`, every property of the object is an array.
 
@@ -284,7 +286,7 @@ Properties:
 
 - Type: `Object`
 
-A task-type scheduled activity.
+Description: A task-type scheduled activity.
 
 An `Object` that contains the details of a task, with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
 
@@ -303,7 +305,7 @@ Properties:
 
 - Type: `Object`
 
-An event-type scheduled activity.
+Description: An event-type scheduled activity.
 
 An `Object` that contains the details of an event, with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
 
@@ -322,7 +324,7 @@ Properties:
 
 - Type: `object`
 
-A appointment-type scheduled activity.
+Description: A appointment-type scheduled activity.
 
 An `object` with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
 
@@ -341,7 +343,7 @@ Properties:
 
 - Type: `object`
 
-A meeting-type scheduled activity.
+Description: A meeting-type scheduled activity.
 
 An `object` with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
 
@@ -356,19 +358,11 @@ Properties:
 | `type`        | `"meeting"`       | Type of scheduled activity meeting.          |
 | `YYMMDD`      | `Array.<number>`  | Scheduled date for the meeting [YY, MM, DD]. |
 
-### Type `Days`
-
-- Type: `Array.<Day>` [See Activity](#Type-Day)
-
-The details of the days of the month, a collection of information about all the days of the month.
-
-An object `array`, every `array` element contains information about a day of the month, If it is a weekend or a work day, if it has already elapsed, it is the current day, week number.
-
 ### Type `Day`
 
-- Type: `Day`
+- Type: `Object`
 
-Details of a day.
+Description: Details of a day.
 
 An `Object` with the properties `day`, `date`, `weekday`, `type`, `week`, `workday`, `isWorkday`, `isWeekend`, and `scheduled`.
 
@@ -386,6 +380,100 @@ Properties:
 | `isWeekend` | `boolean`         | If the day is a weekend.                                      |
 | `scheduled` | `Scheduled`       | Number of the activities of a day.                            |
 
-## USAGE
+### Type `Days`
+
+- Type: `Array.<Day>` [See Activity](#Type-Day)
+
+Description: The details of the days of the month, a collection of information about all the days of the month.
+
+An object `array`, every `array` element contains information about a day of the month, If it is a weekend or a work day, if it has already elapsed, it is the current day, week number.
+
+### Type `Summary`
+
+- Type: `Object`
+
+Description: Summary of the month with information on weeks, working days and dates.
+
+An `Object` with the properties `dates`, `days`, `weeks`, and `workdays`.
+
+Properties:
+
+| Name       | Type             | Description                |
+|------------|------------------|----------------------------|
+| `dates`    | `DatesSummary`   | Month's dates Summary.     |
+| `days`     | `DaysSummary`    | Month's days Summary.      |
+| `weeks`    | `WeeksSumary`    | Month's weeks Summary.     |
+| `workdays` | `WorkdaysSumary` | Month's work days Summary. |
+
+### Type `DatesSummary`
+
+- Type: `Object`
+
+Description: Month's dates summary.
+
+An `Object` with the properties `start`, `current`, and `end`.
+
+Properties:
+
+| Name      | Type   | Description           |
+|-----------|--------|-----------------------|
+| `start`   | `Date` | Month's start date.   |
+| `current` | `Date` | Month's current date. |
+| `end`     | `Date` | Month's end date.     |
+
+### Type `DaysSummary`
+
+- Type: `Object`
+
+Description: Month's dates summary.
+
+An `Object` with the properties `current`, `total`, `elapsed`, `remaining` and `percentage`.
+
+Properties:
+
+| Name         | Type     | Description                        |
+|--------------|----------|------------------------------------|
+| `current`    | `number` | Month's currentd day.              |
+| `total`      | `number` | Month's total days.                |
+| `elapsed`    | `number` | Month's elapsed days.              |
+| `remaining`  | `number` | Month's remaining days.            |
+| `percentage` | `number` | Month's percentage remaining days. |
+
+### Type `WeeksSumary`
+
+- Type: `Object`
+
+Description: Month's weeks summary.
+
+An `Object` with the properties `current`, `total`, `elapsed`, `remaining` and `percentage`.
+
+Properties:
+
+| Name         | Type     | Description                         |
+|--------------|----------|-------------------------------------|
+| `current`    | `number` | Month's current week.               |
+| `total`      | `number` | Month's total weeks.                |
+| `elapsed`    | `number` | Month's elapsed weeks.              |
+| `remaining`  | `number` | Month's remaining weeks.            |
+| `percentage` | `number` | Month's percentage remaining weeks. |
+
+### Type `WorkdaysSumary`
+
+- Type: `Object`
+
+Description: Month's work days summary.
+
+An `Object` with the properties `current`, `total`, `elapsed`, `remaining` and `percentage`.
+
+Properties:
+
+| Name         | Type     | Description                             |
+|--------------|----------|-----------------------------------------|
+| `current`    | `number` | Month's current work day.               |
+| `total`      | `number` | Month's total work days.                |
+| `elapsed`    | `number` | Month's elapsed work days.              |
+| `remaining`  | `number` | Month's remaining work days.            |
+| `percentage` | `number` | Month's percentage remaining work days. |
+
 
 ## TODO
