@@ -475,5 +475,4 @@ Properties:
 | `remaining`  | `number` | Month's remaining work days.            |
 | `percentage` | `number` | Month's percentage remaining work days. |
 
-
 ## TODO
