@@ -1,0 +1,37 @@
+# VERSION FILE 1.0.0
+
+# HUSKY FILES
+.husky
+.huskyrc
+
+# GIT FILES
+.gitattributes
+.gitignore
+COMMIT_EDITMSG
+
+# ESLINT FILES
+.eslintignore
+.eslintrc
+.eslintrc.*
+
+# PRETTIER FILES
+.prettierignore
+.prettierrc
+.prettierrc.json
+
+node_modules
+.babelrc
+.editorconfig
+.lintstagedrc
+
+ava.config.*
+.stylelintrc
+commitlint.config.js
+gulpfile.js
+jest.config.*
+jsdoc.json
+LICENSE
+nodemon.json
+package-lock.json
+yarn.lock
+yarn-error.log
