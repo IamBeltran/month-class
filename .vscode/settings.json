@@ -17,6 +17,7 @@
     ".gitignore": true,
     ".huskyrc": true,
     ".lintstagedrc": true,
+    ".npmignore": true,
     ".prettierignore": true,
     ".prettierrc": true,
     ".prettierrc.json": true,
