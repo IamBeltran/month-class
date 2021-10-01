@@ -39,4 +39,8 @@ module.exports = {
     ],
   },
   plugins: [],
+  infrastructureLogging: {
+    level: 'verbose',
+  },
+  devtool: 'inline-source-map',
 };
