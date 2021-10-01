@@ -73,19 +73,25 @@ const month = new Month({
 
 - Type `Array.<number>`
 
-Description:
+Description: It is a number `array` with three elements.
+
+The array elements represent the year number, month number and day number `[YY, MM, DD]`.
 
 ### WEEKEND `Readonly`
 
 - Type `Array.<number>`
 
-Description:
+Description: Its a number `array`.
+
+The array elements represent days of the week that are not working days and takes as weekend, its value is like like as `Date.prototype.getDay()`.
 
 ### SCE `Readonly`
 
 - Type `Array.<number>`
 
-Description:
+Description: Its a number `array`, with three elements.
+
+The array elements represent one day of the month, the day month start, the day month current and the day month end, its value is like `Date.prototype.getDate()`.
 
 ### year
 
