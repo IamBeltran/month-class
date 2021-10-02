@@ -28,7 +28,7 @@ const mapWeekend = new Map([
   [11, '0001000'], // 11 Thursday
   [12, '0000100'], // 12 Friday
   [13, '0000010'], // 13 Saturday
-  [14, '0000001'], // 14 Saturday
+  [14, '0000001'], // 14 Sunday
   [15, '0000000'], // 15 None
 ]);
 
