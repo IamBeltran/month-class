@@ -1,4 +1,4 @@
-﻿# Class: Month
+﻿# 🗓️ Class: Month
 
 ![Logo](docs/LOGO.png)
 
