@@ -41,7 +41,7 @@
     "lint": "npx eslint",
     "prepare": "husky install",
     "build": "npx rimraf dist && webpack",
-    "prepublish": "npm lint && npm test && npm run build"
+    "prepublish": "npm test && npm run build"
   },
   "dependencies": {},
   "devDependencies": {
