@@ -298,7 +298,7 @@ console.log(planner.events);
 
 ## API Docs
 
-Find the API docs [here](https://github.com/IamBeltran/month-class/blob/main/docs/API_DOCS.md)
+Find the API docs [here](https://github.com/IamBeltran/month-class/wiki)
 
 ## TODO
 
