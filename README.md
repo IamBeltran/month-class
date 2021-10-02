@@ -301,3 +301,5 @@ console.log(planner.events);
 Find the API docs [here](#https://github.com/IamBeltran/month-class/blob/main/docs/API_DOCS.md)
 
 ## TODO
+
+- 🔳 Create react provider.
