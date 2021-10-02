@@ -1,6 +1,4 @@
-﻿# 🗓️ Class: Month
-
-![Logo](docs/LOGO.png)
+﻿# 🗓️ Month class
 
 The `Month` class manages the information of a month from given date, such as number of weeks, number of work days, number of weekend.
 
