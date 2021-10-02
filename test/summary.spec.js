@@ -29,11 +29,11 @@ const EXPECTEDS = [
       percentage: 0.5,
     },
     workdays: {
-      current: 11,
-      total: 23,
-      elapsed: 10,
+      current: 10,
+      total: 22,
+      elapsed: 9,
       remaining: 12,
-      percentage: 0.5217391304347826,
+      percentage: 0.5454545454545454,
     },
   },
   {
@@ -57,11 +57,11 @@ const EXPECTEDS = [
       percentage: 0.5,
     },
     workdays: {
-      current: 9,
-      total: 18,
-      elapsed: 8,
+      current: 8,
+      total: 17,
+      elapsed: 7,
       remaining: 9,
-      percentage: 0.5,
+      percentage: 0.5294117647058824,
     },
   },
   {
@@ -113,11 +113,11 @@ const EXPECTEDS = [
       percentage: 0.4,
     },
     workdays: {
-      current: 13,
-      total: 24,
-      elapsed: 12,
+      current: 12,
+      total: 23,
+      elapsed: 11,
       remaining: 11,
-      percentage: 0.4583333333333333,
+      percentage: 0.4782608695652174,
     },
   },
 ];
