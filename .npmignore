@@ -64,6 +64,7 @@ ava.config.*
 commitlint.config.*
 jest.config.*
 webpack.config.*
+jsdoc.config.json
 
 # editor configurations file
 .editorconfig
@@ -75,12 +76,15 @@ gulpfile.js
 nodemon.json
 
 # Ignore docs files
-docs/CHANGELOG.md
-docs/CHANGES.md
-docs/GITHUB.md
-docs/NOTICE.md
-docs/NOTES.md
-docs/ICON.png
+# ./docs/CHANGELOG.md
+# ./docs/CHANGES.md
+# ./docs/GITHUB.md
+# ./docs/NOTICE.md
+# ./docs/NOTES.md
+# ./docs/ICON.png
+
+docs/
+# !docs/LOGO.png
 
 # Ignore test directory
 test/
@@ -93,3 +97,4 @@ development/
 
 # develop files
 develop.*.js
+develop.js
