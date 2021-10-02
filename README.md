@@ -45,7 +45,7 @@ const month = new Month({
 
 ### Select weekends
 
-See [documentation](https://github.com/IamBeltran/month-class/blob/main/docs/API_DOCS.md) for more details.
+See [documentation](https://github.com/IamBeltran/month-class/wiki/Type-Definitions#type-weekendoption) for more details.
 
 ```javascript
 const month = new Month({
@@ -166,6 +166,8 @@ const month = new Month({ current: date, datebook });
 //    WORKDAYS [1, 2, 4, 5, 6,..., 30] = 31 - 6 = 25
 
 ```
+
+## untitle
 
 ### Month.prototype.days
 
