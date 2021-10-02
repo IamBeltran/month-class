@@ -6,6 +6,143 @@ The `Month` class manages the information of a month from given date, such as nu
 
 ## USAGE
 
+### Month.prototype.days
+
+```javascript
+const Month = require('Month');
+
+// or const month = new Month();
+const month = new Month({
+  current: new Date(2021, 0, 15), // Friday, January 15 2021
+  weekend: '0000011', // Weekend days: Saturday Sunday
+  datebook: [{
+    date: '2021-01-11',
+    title: 'Send final sales report',
+    description: "Don't forget to attach graphics",
+    type: 'task', // Allowed values: 'task', 'event', 'appointment', 'meeting'.
+    holiday: false,
+  },{
+    date: '2021-08-14', // The date does not correspond to the indicated month, Will be omitted.
+    title: 'Rick and morty season finale',
+    description: "Don't forget to order pizza",
+    type: 'event',
+    holiday: false,
+  },{
+    date: '2021-01-26',
+    title: 'Pay the credit card',
+    description: 'Amount 345.50',
+    type: 'task',
+    holiday: false,
+  },{
+    date: '2021-01-19',
+    title: 'Meeting with investors',
+    description: 'Send quote before',
+    type: 'task',
+    holiday: true, // One less work-day
+  }],
+});
+
+// Array with information of the month
+const { days } = month;
+
+console.log(days.length); // Expected value 31
+console.log(days[10]);
+/*
+{
+  day: 11,
+  date: [ 2021, 0, 11 ],
+  weekday: 1,
+  type: 'elapsed',
+  week: 3,
+  workday: 7,
+  isWorkday: true,
+  isWeekend: false,
+  scheduled: { tasks: 1, events: 0, appointments: 0, meetings: 0, total: 1 }
+}
+*/
+
+console.log(days[18]);
+/*
+{
+  day: 19,
+  date: [ 2021, 0, 19 ],
+  weekday: 2,
+  type: 'remaining',
+  week: 4,
+  workday: 12,
+  isWorkday: false,
+  isWeekend: false,
+  scheduled: { tasks: 0, events: 0, appointments: 0, meetings: 1, total: 1 }
+}
+*/
+
+```
+
+### Month.prototype.planner
+
+```javascript
+const Month = require('Month');
+
+// or const month = new Month();
+const month = new Month({
+  current: new Date(2021, 0, 15), // Friday, January 15 2021
+  weekend: '0000011', // Weekend days: Saturday Sunday
+  datebook: [{
+    date: '2021-01-11',
+    title: 'Send final sales report',
+    description: "Don't forget to attach graphics",
+    type: 'task', // Allowed values: 'task', 'event', 'appointment', 'meeting'.
+    holiday: false,
+  },{
+    date: '2021-08-14', // The date does not correspond to the indicated month, Will be omitted.
+    title: 'Rick and morty season finale',
+    description: "Don't forget to order pizza",
+    type: 'event',
+    holiday: false,
+  },{
+    date: '2021-01-26',
+    title: 'Pay the credit card',
+    description: 'Amount 345.50',
+    type: 'task',
+    holiday: false,
+  },{
+    date: '2021-01-19',
+    title: 'Meeting with investors',
+    description: 'Send quote before',
+    type: 'task',
+    holiday: true, // One less work-day
+  }],
+});
+
+// Object with scheduled activities, organized by type
+const { planner } = month;
+
+console.log(planner);
+/*
+{
+  tasks: [...],         3 elements
+  events: [...],        1 element
+  appointments: [...],  0 elements
+  meetings: [...],      0 elements
+}
+*/
+
+console.log(planner.events);
+
+/*
+[
+  {
+    date: '2021-08-14',
+    title: 'Rick and morty season finale',
+    description: "Don't forget to order pizza",
+    type: 'event',
+    holiday: false,
+  },
+]
+*/
+
+```
+
 ## Constructor `new Month([options])`
 
 Creates an instance of Month.
