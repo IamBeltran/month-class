@@ -20,6 +20,12 @@ const Month = require('month-class');
 import Month from 'month-class';
 ```
 
+```html
+<!-- From CDN -->
+<script src="https://cdn.jsdelivr.net/npm/month-class@1.0.0/dist/month.bundle.js" crossorigin="anonymous"></script>
+
+```
+
 ## Overview
 
 ### Create instance
@@ -54,6 +60,8 @@ const month = new Month({
 });
 ```
 
+## Concepts
+
 ### Activity
 
 Information about a scheduled activity.
@@ -82,7 +90,7 @@ const month = new Month({
 
 ### Datebook
 
-The 'datebook' is a collection of activities, those that do not correspond to the month will be omitted, leaving only those of the month indicated in current.
+The `datebook` is a collection of activities, those that do not correspond to the month will be omitted, leaving only those of the month indicated in current.
 
 ```javascript
 const Month = require('month-class');
@@ -176,7 +184,7 @@ const month = new Month({
     holiday: false,
   },{
     date: '2021-08-14', // The date does not correspond to the indicated month, Will be omitted.
-    title: 'Rick and morty season finale',
+    title: 'See Final space season finale',
     description: "Don't forget to order pizza",
     type: 'event',
     holiday: false,
