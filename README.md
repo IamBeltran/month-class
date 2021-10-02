@@ -167,7 +167,7 @@ const month = new Month({ current: date, datebook });
 
 ```
 
-## untitle
+## Basics of the Month
 
 ### Month.prototype.days
 
@@ -312,4 +312,5 @@ Find the API docs [here](https://github.com/IamBeltran/month-class/wiki)
 
 ## TODO
 
+- 🔳 Live demo browser
 - 🔳 Create react provider.
