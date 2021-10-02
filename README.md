@@ -9,7 +9,7 @@ The `Month` class manages the information of a month from given date, such as nu
 ### Month.prototype.days
 
 ```javascript
-const Month = require('Month');
+const Month = require('month-class');
 
 // or const month = new Month();
 const month = new Month({
@@ -81,7 +81,7 @@ console.log(days[18]);
 ### Month.prototype.planner
 
 ```javascript
-const Month = require('Month');
+const Month = require('month-class');
 
 // or const month = new Month();
 const month = new Month({
