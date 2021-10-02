@@ -1,6 +1,6 @@
 {
   "name": "month-class",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": false,
   "description": "Month class, manages information of the month from a given date",
   "keywords": [
