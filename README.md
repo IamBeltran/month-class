@@ -28,7 +28,7 @@ import Month from 'month-class';
 
 ## Live demo
 
-Vanilla javascript: [here](https://github.com/IamBeltran/month-class/wiki)
+Vanilla javascript: [here](https://iambeltran.github.io/month-class/index.html)
 
 ## Overview
 
