@@ -1,16 +1,16 @@
 /**
- * @file TODO ADD DESCRIPTION.
+ * @file Manages the main script for the sample page.
  */
 /* eslint-disable no-undef */
 
 // ━━	CONSTANTS	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » MAPPERS
 /**
- * TODO ADD DESCRIPTION.
+ * A `Object` with English and Spanish translations of month names.
  *
  * @type {{ ES: Map.<number,string>, EN: Map.<number,string> }}
  */
- const MONTHS_MAPPER = {
+const MONTHS_MAPPER = {
   ES: new Map([
     [0, 'Enero'],
     [1, 'Febrero'],
@@ -42,7 +42,7 @@
 };
 
 /**
- * TODO ADD DESCRIPTION.
+ * A `Object` with English and Spanish translations of weekday names.
  *
  * @type {{ ES: Map.<number,string>, EN: Map.<number,string> }}
  */
@@ -68,7 +68,7 @@ const WEEKDAYS_MAPPER = {
 };
 
 /**
- * TODO ADD DESCRIPTION.
+ * A `Object` with English and Spanish translations of day type names.
  *
  * @type {{ ES: Map.<number,string>, EN: Map.<number,string> }}
  */
@@ -86,7 +86,7 @@ const TYPE_MAPPER = {
 };
 
 /**
- * TODO ADD DESCRIPTION.
+ * An `Object` with the class names for the rows of a table.
  *
  * @type {Map.<boolean,string>}
  */
@@ -97,7 +97,7 @@ const CLASS_TYPE_MAPPER = new Map([
 ]);
 
 /**
- * TODO ADD DESCRIPTION.
+ * An `Object` with the class names for the rows of a table.
  *
  * @type {Map.<boolean,string>}
  */
@@ -108,56 +108,56 @@ const CLASS_WEEKEND_MAPPER = new Map([
 
 // » HTML ELEMENTS
 /**
- * TODO ADD DESCRIPTION.
+ * Reference to an html element.
  *
  * @type {HTMLTableSectionElement}
  */
 const TCAPTION = document.getElementById('month-table-caption');
 
 /**
- * TODO ADD DESCRIPTION.
+ * Reference to an html element.
  *
  * @type {HTMLElement}
  */
 const TBODY = document.getElementById('month-days');
 
 /**
- * TODO ADD DESCRIPTION.
+ * Reference to an html element.
  *
  * @type {HTMLElement}
  */
 const SUMARY_DAYS_LIST = document.getElementById('summary-days-list');
 
 /**
- * TODO ADD DESCRIPTION.
+ * Reference to an html element.
  *
  * @type {HTMLElement}
  */
 const SUMARY_WEEKS_LIST = document.getElementById('summary-weeks-list');
 
 /**
- * TODO ADD DESCRIPTION.
+ * Reference to an html element.
  *
  * @type {HTMLElement}
  */
 const TASK_TOTAL = document.getElementById('task-total');
 
 /**
- * TODO ADD DESCRIPTION.
+ * Reference to an html element.
  *
  * @type {HTMLElement}
  */
 const TASKS_LIST = document.getElementById('tasks-list');
 
 /**
- * TODO ADD DESCRIPTION.
+ * Reference to an html element.
  *
  * @type {HTMLElement}
  */
 const MEETING_TOTAL = document.getElementById('meeting-total');
 
 /**
- * TODO ADD DESCRIPTION.
+ * Reference to an html element.
  *
  * @type {HTMLElement}
  */
@@ -165,15 +165,15 @@ const MEETING_LIST = document.getElementById('meeting-list');
 
 // » STRING TEMPLATES
 /**
- * TODO ADD DESCRIPTION.
+ * String template to dynamically create html rows.
  *
  * @type {string}
  */
 const STRING_ROW_TABLE = `<tr class="<CLASS_TYPE> <CLASS_WEEKEND>">
   <th scope="row"><DAY></th>
   <td><STRING_DATE></td>
-  <td><ES_MX_WEEKDAY></td>
-  <td><ES_MX_TYPE></td>
+  <td><NAME_WEEKDAY></td>
+  <td><NAME_TYPE></td>
   <td><WORKDAY></td>
   <td><WEEK></td>
   <td><CHAR_WEEKEND></td>
@@ -183,7 +183,7 @@ const STRING_ROW_TABLE = `<tr class="<CLASS_TYPE> <CLASS_WEEKEND>">
 `;
 
 /**
- * TODO ADD DESCRIPTION.
+ * String template to dynamically create html list.
  *
  * @type {string}
  */
@@ -195,7 +195,7 @@ const STRING_LIST_SUMMARY = `<li class="list-group-item d-flex justify-content-b
 </li>`;
 
 /**
- * TODO ADD DESCRIPTION.
+ * String template to dynamically create html list.
  *
  * @type {string}
  */
@@ -223,12 +223,12 @@ const DOMReady = callback =>
     : document.addEventListener('DOMContentLoaded', callback);
 
 /**
- * TODO ADD DESCRIPTION.
+ * The 'getFormattedDate()' function returns a string with date format.
  *
  * @private
- * @param   {Array.<number>} YYMMDD - TODO ADD DESCRIPTION.
- * @returns {string} TODO ADD DESCRIPTION.
- * @example getFormattedDate(new Date()); // 2020-03-01
+ * @param   {Array.<number>} YYMMDD - A number array with tree elements.
+ * @returns {string} A `string` with date format.
+ * @example getFormattedDate(YYMMDD); // 2020-03-01
  *
  */
 const getFormattedDate = YYMMDD =>
@@ -285,12 +285,12 @@ const getFormattedDate = YYMMDD =>
  * @property {boolean}        isWorkday     - If the day is a work day.
  * @property {boolean}        isWeekend     - If the day is a weekend.
  * @property {Scheduled}      scheduled     - Number of the activities of a day.
- * @property {number}         total         - TODO ADD DESCRIPTION.
- * @property {string}         string_date   - TODO ADD DESCRIPTION.
- * @property {string}         class_type    - TODO ADD DESCRIPTION.
- * @property {string}         class_weekend - TODO ADD DESCRIPTION.
- * @property {string}         es_mx_weekday - TODO ADD DESCRIPTION.
- * @property {string}         es_mx_type    - TODO ADD DESCRIPTION.
+ * @property {number}         total         - Total number of scheduled activities.
+ * @property {string}         string_date   - A date in text format.
+ * @property {string}         class_type    - Css class name for a table row.
+ * @property {string}         class_weekend - Css class name for a table row.
+ * @property {string}         name_weekday  - TODO ADD DESCRIPTION.
+ * @property {string}         name_type     - TODO ADD DESCRIPTION.
  * @property {string}         char_weekend  - TODO ADD DESCRIPTION.
  * @property {string}         char_workday  - TODO ADD DESCRIPTION.
  */
@@ -309,8 +309,8 @@ const createData = day =>
     string_date: getFormattedDate(day.date),
     class_type: CLASS_TYPE_MAPPER.get(day.type),
     class_weekend: CLASS_WEEKEND_MAPPER.get(day.isWeekend),
-    es_mx_weekday: WEEKDAYS_MAPPER.EN.get(day.weekday),
-    es_mx_type: TYPE_MAPPER.EN.get(day.type),
+    name_weekday: WEEKDAYS_MAPPER.EN.get(day.weekday),
+    name_type: TYPE_MAPPER.EN.get(day.type),
     char_weekend: day.isWeekend ? '✓' : '-',
     char_workday: day.isWorkday ? '✓' : '-',
   });
@@ -328,8 +328,8 @@ const createRows = data =>
     .replaceAll('<CLASS_WEEKEND>', data.class_weekend)
     .replaceAll('<DAY>', data.day)
     .replaceAll('<STRING_DATE>', data.string_date)
-    .replaceAll('<ES_MX_WEEKDAY>', data.es_mx_weekday)
-    .replaceAll('<ES_MX_TYPE>', data.es_mx_type)
+    .replaceAll('<NAME_WEEKDAY>', data.name_weekday)
+    .replaceAll('<NAME_TYPE>', data.name_type)
     .replaceAll('<WORKDAY>', data.workday)
     .replaceAll('<WEEK>', data.week)
     .replaceAll('<CHAR_WEEKEND>', data.char_weekend)
@@ -342,7 +342,7 @@ const createRows = data =>
  * An `Object` with the properties `date`, `title`, `description`, `holiday`, `type`, and `YYMMDD`.
  *
  * @private
- * @typedef  {object}         Task
+ * @typedef  {object}         Activity
  * @property {string}         date        - Scheduled date for the task `"YYYY-MM-DD"`.
  * @property {string}         title       - Task title.
  * @property {string}         description - Task description.
@@ -354,7 +354,7 @@ const createRows = data =>
 /**
  * TODO ADD DESCRIPTION.
  *
- * @param   {Task} item - TODO ADD DESCRIPTION.
+ * @param   {Activity} activity - TODO ADD DESCRIPTION.
  * @returns {string} TODO ADD DESCRIPTION.
  * @example createTaskList(task);
  *
@@ -381,7 +381,7 @@ const createSummaryList = ([description, amount]) =>
  * @param   {number} number - TODO ADD DESCRIPTION.
  * @param   {number} digit - TODO ADD DESCRIPTION.
  * @returns {string} TODO ADD DESCRIPTION.
- * @example numberToXdigits(1, 2); // expeted value 01
+ * @example numberToXdigits(1, 2); // expeted value '01'
  *
  */
 const numberToXdigits = (number, digit) =>
@@ -389,6 +389,7 @@ const numberToXdigits = (number, digit) =>
     minimumIntegerDigits: Number(digit),
     useGrouping: false,
   });
+
 // ━━	MODULE	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 DOMReady(() => {
   const current = new Date();
