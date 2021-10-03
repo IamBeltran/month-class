@@ -1,6 +1,7 @@
 /**
  * @file TODO ADD DESCRIPTION.
  */
+/* eslint-disable no-undef */
 
 // ━━	CONSTANTS	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // » MAPPERS
@@ -114,21 +115,55 @@ const CLASS_WEEKEND_MAPPER = new Map([
 const TCAPTION = document.getElementById('month-table-caption');
 
 /**
- * @type {HTMLTableSectionElement}
+ * TODO ADD DESCRIPTION.
+ *
+ * @type {HTMLElement}
  */
 const TBODY = document.getElementById('month-days');
 
-
+/**
+ * TODO ADD DESCRIPTION.
+ *
+ * @type {HTMLElement}
+ */
 const SUMARY_DAYS_LIST = document.getElementById('summary-days-list');
+
+/**
+ * TODO ADD DESCRIPTION.
+ *
+ * @type {HTMLElement}
+ */
 const SUMARY_WEEKS_LIST = document.getElementById('summary-weeks-list');
 
-
+/**
+ * TODO ADD DESCRIPTION.
+ *
+ * @type {HTMLElement}
+ */
 const TASK_TOTAL = document.getElementById('task-total');
+
+/**
+ * TODO ADD DESCRIPTION.
+ *
+ * @type {HTMLElement}
+ */
 const TASKS_LIST = document.getElementById('tasks-list');
 
+/**
+ * TODO ADD DESCRIPTION.
+ *
+ * @type {HTMLElement}
+ */
 const MEETING_TOTAL = document.getElementById('meeting-total');
+
+/**
+ * TODO ADD DESCRIPTION.
+ *
+ * @type {HTMLElement}
+ */
 const MEETING_LIST = document.getElementById('meeting-list');
 
+// » STRING TEMPLATES
 /**
  * TODO ADD DESCRIPTION.
  *
@@ -147,6 +182,11 @@ const STRING_ROW_TABLE = `<tr class="<CLASS_TYPE> <CLASS_WEEKEND>">
 </tr>
 `;
 
+/**
+ * TODO ADD DESCRIPTION.
+ *
+ * @type {string}
+ */
 const STRING_LIST_SUMMARY = `<li class="list-group-item d-flex justify-content-between align-items-start bg-dark text-white">
   <div class="ms-2 me-auto">
     <div class="fw-bold"><DESCRIPTION></div>
@@ -154,6 +194,11 @@ const STRING_LIST_SUMMARY = `<li class="list-group-item d-flex justify-content-b
   <span class="badge bg-light text-dark rounded-pill"><AMOUNT></span>
 </li>`;
 
+/**
+ * TODO ADD DESCRIPTION.
+ *
+ * @type {string}
+ */
 const STRING_LIST_PLANNER = `<li class="list-group-item d-flex justify-content-between align-items-start bg-dark text-white">
   <div class="ms-2 me-auto">
     <div class="fw-bold"><TITLE></div>
@@ -327,11 +372,8 @@ const createPlannerList = item =>
  * @example createTaskList(task);
  *
  */
- const createSummaryList = ([description, amount]) =>
-  STRING_LIST_SUMMARY.replaceAll('<DESCRIPTION>', description)
-   .replaceAll('<AMOUNT>', amount);
-
-
+const createSummaryList = ([description, amount]) =>
+  STRING_LIST_SUMMARY.replaceAll('<DESCRIPTION>', description).replaceAll('<AMOUNT>', amount);
 
 /**
  * TODO ADD DESCRIPTION.
@@ -352,30 +394,77 @@ DOMReady(() => {
   const current = new Date();
   const YEAR = current.getFullYear();
   const MONTH = current.getMonth();
-  const [DATE_00, DATE_01, DATE_02, DATE_03, DATE_04, DATE_05, DATE_06, DATE_07, DATE_08, DATE_09] =
-    [
-      [YEAR, MONTH + 1, 1],
-      [YEAR, MONTH + 1, 2],
-      [YEAR, MONTH + 1, 15],
-      [YEAR, MONTH + 1, 20],
-      [YEAR, MONTH + 1, 28],
-      [YEAR, MONTH + 1, 3],
-      [YEAR, MONTH + 1, 4],
-      [YEAR, MONTH + 1, 16],
-    ]
-      .map(([YY, MM, DD]) => [YY, numberToXdigits(MM, 2), numberToXdigits(DD, 2)])
-      .map(d => d.join('-'));
+  const [DATE_00, DATE_01, DATE_02, DATE_03, DATE_04, DATE_05, DATE_06, DATE_07] = [
+    [YEAR, MONTH + 1, 1],
+    [YEAR, MONTH + 1, 2],
+    [YEAR, MONTH + 1, 15],
+    [YEAR, MONTH + 1, 20],
+    [YEAR, MONTH + 1, 28],
+    [YEAR, MONTH + 1, 3],
+    [YEAR, MONTH + 1, 4],
+    [YEAR, MONTH + 1, 16],
+  ]
+    .map(([YY, MM, DD]) => [YY, numberToXdigits(MM, 2), numberToXdigits(DD, 2)])
+    .map(d => d.join('-'));
 
   const datebook = [
-    { date: DATE_00, title: 'Create monthly sales report', description: 'Finish on the day 1th',  holiday: true,  type: 'task'  },
-    { date: DATE_01, title: 'Send monthly sales report', description: "Don't forget to attach graphics", holiday: false,  type: 'task'  },
-    { date: DATE_02, title: 'Create product catalog', description: 'Hire photographer', holiday: false,  type: 'task'  },
-    { date: DATE_03, title: 'Send product catalog', description: "Don't forget to attach photos", holiday: false,  type: 'task'  },
-    { date: DATE_04, title: 'Pay credit card', description: 'Monthly payment $34.50', holiday: false,  type: 'task'  },
+    {
+      date: DATE_00,
+      title: 'Create monthly sales report',
+      description: 'Finish on the day 1th',
+      holiday: true,
+      type: 'task',
+    },
+    {
+      date: DATE_01,
+      title: 'Send monthly sales report',
+      description: "Don't forget to attach graphics",
+      holiday: false,
+      type: 'task',
+    },
+    {
+      date: DATE_02,
+      title: 'Create product catalog',
+      description: 'Hire photographer',
+      holiday: false,
+      type: 'task',
+    },
+    {
+      date: DATE_03,
+      title: 'Send product catalog',
+      description: "Don't forget to attach photos",
+      holiday: false,
+      type: 'task',
+    },
+    {
+      date: DATE_04,
+      title: 'Pay credit card',
+      description: 'Monthly payment $34.50',
+      holiday: false,
+      type: 'task',
+    },
 
-    { date: DATE_05, title: 'Meeting with managers', description: 'In the cafe in the square, 11:30 a.m.',  holiday: true,  type: 'meeting'  },
-    { date: DATE_06, title: 'Meeting with investors', description: "Show the new product catalog", holiday: false,  type: 'meeting'  },
-    { date: DATE_07, title: 'Meeting with suppliers', description: 'In the cafe in the square, 11:30 a.m.',  holiday: true,  type: 'meeting'  },
+    {
+      date: DATE_05,
+      title: 'Meeting with managers',
+      description: 'In the cafe in the square, 11:30 a.m.',
+      holiday: true,
+      type: 'meeting',
+    },
+    {
+      date: DATE_06,
+      title: 'Meeting with investors',
+      description: 'Show the new product catalog',
+      holiday: false,
+      type: 'meeting',
+    },
+    {
+      date: DATE_07,
+      title: 'Meeting with suppliers',
+      description: 'In the cafe in the square, 11:30 a.m.',
+      holiday: true,
+      type: 'meeting',
+    },
   ];
 
   const month = new Month({
@@ -402,13 +491,12 @@ DOMReady(() => {
     ['Current', summary.days.current],
     ['Total', summary.days.total],
     ['Elapsed', summary.days.elapsed],
-    ['Remaining',  summary.days.remaining],
-    ['Percentage' ,`${summary.days.percentage * 100} %`],
+    ['Remaining', summary.days.remaining],
+    ['Percentage', `${summary.days.percentage * 100} %`],
   ];
 
+  const DAYS = SUMMARY_DAYS.map(createSummaryList);
 
-
-  const DAYS = SUMMARY_DAYS.map(createSummaryList)
   DAYS.forEach(day => {
     SUMARY_DAYS_LIST.innerHTML += day;
   });
@@ -417,11 +505,12 @@ DOMReady(() => {
     ['Current', summary.weeks.current],
     ['Total', summary.weeks.total],
     ['Elapsed', summary.weeks.elapsed],
-    ['Remaining',  summary.weeks.remaining],
-    ['Percentage' ,`${summary.weeks.percentage * 100} %`],
+    ['Remaining', summary.weeks.remaining],
+    ['Percentage', `${summary.weeks.percentage * 100} %`],
   ];
 
-  const WEEKS = SUMMARY_WEEKS.map(createSummaryList)
+  const WEEKS = SUMMARY_WEEKS.map(createSummaryList);
+
   WEEKS.forEach(day => {
     SUMARY_WEEKS_LIST.innerHTML += day;
   });
