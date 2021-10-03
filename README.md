@@ -26,6 +26,10 @@ import Month from 'month-class';
 
 ```
 
+## Live demo
+
+Vanilla javascript: [here](https://github.com/IamBeltran/month-class/wiki)
+
 ## Overview
 
 ### Create instance
