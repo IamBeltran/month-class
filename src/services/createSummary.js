@@ -43,7 +43,7 @@ const createSummary = ({ YYMMDD, nonworkdays }) => {
   const totalDays = endMonth.getDate();
   const elapsedDays = currentDay - 1;
   const remainingDays = totalDays - currentDay;
-  const percentageDays = remainingDays / totalDays;
+  const percentageDays = parseFloat((currentDay / totalDays).toFixed(2));
 
   // TEMPORARY
   const temporary = new Date(YY, MM, 1);
@@ -79,14 +79,14 @@ const createSummary = ({ YYMMDD, nonworkdays }) => {
   const totalWeeks = TOTAL_WEEKS;
   const elapsedWeeks = currentWeek - 1;
   const remainingWeeks = totalWeeks - currentWeek;
-  const percentageWeeks = remainingWeeks / totalWeeks;
+  const percentageWeeks = parseFloat((currentWeek / totalWeeks).toFixed(2));
 
   // WORKDAYS
   const currentWorkday = CURRENT_WORKDAY;
   const totalWorkdays = TOTAL_WORKDAYS;
   const elapsedWorkdays = currentWorkday - 1;
   const remainingWorkdays = totalWorkdays - currentWorkday;
-  const percentageWorkdays = remainingWorkdays / totalWorkdays;
+  const percentageWorkdays = parseFloat((currentWorkday / totalWorkdays).toFixed(2));
 
   return {
     dates: {
