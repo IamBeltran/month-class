@@ -1,0 +1,42 @@
+*::after,
+*::before,
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-segoe-ui: Segoe UI, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
+  --font-segoe-ui-light: Segoe UI Light, Helvetica Neue, Helvetica, Lucida Grande, Arial, Ubuntu, Cantarell, Fira Sans, sans-serif;
+}
+
+body {
+  font-size: 16px;
+  font-family: var(--font-segoe-ui);
+  transition: 0.3s ease all;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-segoe-ui-light);
+}
+
+ul.summary {
+  height: 210px;
+  overflow-y: auto;
+}
+
+ul.planner {
+  height: 150px;
+  overflow-y: auto;
+}
+
+tbody#month-days tr.current td {
+  background-color: #FCC33B !important;
+  color: #000000;
+}
+
+tbody#month-days tr.weekend td {
+  background-color: #691F9E;
+  color: #EDEBF2;
+}
