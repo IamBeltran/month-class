@@ -70,7 +70,7 @@ const WEEKDAYS_MAPPER = {
 /**
  * A `Object` with English and Spanish translations of day type names.
  *
- * @type {{ ES: Map.<number,string>, EN: Map.<number,string> }}
+ * @type {{ ES: Map.<string,string>, EN: Map.<string,string> }}
  */
 const TYPE_MAPPER = {
   ES: new Map([
@@ -88,7 +88,7 @@ const TYPE_MAPPER = {
 /**
  * An `Object` with the class names for the rows of a table.
  *
- * @type {Map.<boolean,string>}
+ * @type {Map.<string,string>}
  */
 const CLASS_TYPE_MAPPER = new Map([
   ['elapsed', 'elapsed'],
@@ -223,7 +223,10 @@ const DOMReady = callback =>
     : document.addEventListener('DOMContentLoaded', callback);
 
 /**
- * The 'getFormattedDate()' function returns a string with date format.
+ * The `getFormattedDate()` function returns a string with date format.
+ *
+ * The function requires the parameter `YYMMDD` must be a numeric array with
+ * three elements, representing a date [YEAR, MONTH, DAY].
  *
  * @private
  * @param   {Array.<number>} YYMMDD - A number array with tree elements.
@@ -273,7 +276,7 @@ const getFormattedDate = YYMMDD =>
  */
 
 /**
- * TODO ADD DESCRIPTION.
+ * An `Object` with information of a day.
  *
  * @typedef  {object}         RowData
  * @property {number}         day           - Day of the month.
@@ -287,19 +290,19 @@ const getFormattedDate = YYMMDD =>
  * @property {Scheduled}      scheduled     - Number of the activities of a day.
  * @property {number}         total         - Total number of scheduled activities.
  * @property {string}         string_date   - A date in text format.
- * @property {string}         class_type    - Css class name for a table row.
- * @property {string}         class_weekend - Css class name for a table row.
- * @property {string}         name_weekday  - TODO ADD DESCRIPTION.
- * @property {string}         name_type     - TODO ADD DESCRIPTION.
- * @property {string}         char_weekend  - TODO ADD DESCRIPTION.
- * @property {string}         char_workday  - TODO ADD DESCRIPTION.
+ * @property {string}         class_type    - CSS class name for a table row.
+ * @property {string}         class_weekend - CSS class name for a table row.
+ * @property {string}         name_weekday  - Weekday name.
+ * @property {string}         name_type     - Day type name.
+ * @property {string}         char_weekend  - Character to identify if it is true or false.
+ * @property {string}         char_workday  - Character to identify if it is true or false.
  */
 
 /**
- * TODO ADD DESCRIPTION.
+ * The `createData()` function adds properties to an `Object` of type `day`.
  *
- * @param         {Day} day - TODO ADD DESCRIPTION.
- * @returns       {RowData} TODO ADD DESCRIPTION.
+ * @param         {Day} day - An `Object` with information for a day of the month.
+ * @returns       {RowData} An `Object` with information for a day of the month.
  * @example createData(day);
  *
  */
@@ -316,10 +319,11 @@ const createData = day =>
   });
 
 /**
- * TODO ADD DESCRIPTION.
+ * The `createRows()` function returns a string, using a `string` template to
+ * create a `row` type html element.
  *
- * @param   {RowData} data - TODO ADD DESCRIPTION.
- * @returns {string} TODO ADD DESCRIPTION.
+ * @param   {RowData} data - An `Object` with information of a day of month.
+ * @returns {string} String template, with structure of an html element <tr>.
  * @example createRows(data);
  *
  */
@@ -352,10 +356,11 @@ const createRows = data =>
  */
 
 /**
- * TODO ADD DESCRIPTION.
+ * The `createPlannerList()` function returns a string, using a `string` template to
+ * create a `list` type html element.
  *
  * @param   {Activity} activity - TODO ADD DESCRIPTION.
- * @returns {string} TODO ADD DESCRIPTION.
+ * @returns {string} String template, with structure of an html element <li>.
  * @example createTaskList(task);
  *
  */
@@ -365,11 +370,12 @@ const createPlannerList = item =>
     .replaceAll('<DESCRIPTION>', item.description);
 
 /**
- * TODO ADD DESCRIPTION.
+ * The `createSummaryList()` function returns a string, using a `string` template to
+ * create a `list` type html element.
  *
- * @param   {Task} item - TODO ADD DESCRIPTION.
- * @returns {string} TODO ADD DESCRIPTION.
- * @example createTaskList(task);
+ * @param   {Array} item - TODO ADD DESCRIPTION.
+ * @returns {string} String template, with structure of an html element <li>.
+ * @example createSummaryList(item);
  *
  */
 const createSummaryList = ([description, amount]) =>
@@ -381,10 +387,10 @@ const createSummaryList = ([description, amount]) =>
  * @param   {number} number - TODO ADD DESCRIPTION.
  * @param   {number} digit - TODO ADD DESCRIPTION.
  * @returns {string} TODO ADD DESCRIPTION.
- * @example numberToXdigits(1, 2); // expeted value '01'
+ * @example addDigits(1, 2); // expeted value '01'
  *
  */
-const numberToXdigits = (number, digit) =>
+const addDigits = (number, digit) =>
   number.toLocaleString('en-US', {
     minimumIntegerDigits: Number(digit),
     useGrouping: false,
@@ -405,7 +411,7 @@ DOMReady(() => {
     [YEAR, MONTH + 1, 4],
     [YEAR, MONTH + 1, 16],
   ]
-    .map(([YY, MM, DD]) => [YY, numberToXdigits(MM, 2), numberToXdigits(DD, 2)])
+    .map(([YY, MM, DD]) => [YY, addDigits(MM, 2), addDigits(DD, 2)])
     .map(d => d.join('-'));
 
   const datebook = [
@@ -413,7 +419,7 @@ DOMReady(() => {
       date: DATE_00,
       title: 'Create monthly sales report',
       description: 'Finish on the day 1th',
-      holiday: true,
+      holiday: false,
       type: 'task',
     },
     {
@@ -449,7 +455,7 @@ DOMReady(() => {
       date: DATE_05,
       title: 'Meeting with managers',
       description: 'In the cafe in the square, 11:30 a.m.',
-      holiday: true,
+      holiday: false,
       type: 'meeting',
     },
     {
@@ -463,7 +469,7 @@ DOMReady(() => {
       date: DATE_07,
       title: 'Meeting with suppliers',
       description: 'In the cafe in the square, 11:30 a.m.',
-      holiday: true,
+      holiday: false,
       type: 'meeting',
     },
   ];
