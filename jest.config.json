@@ -3,8 +3,7 @@
   "modulePaths": ["test/*.spec.js"],
   "modulePathIgnorePatterns": [
     "notes/",
-    "develop/",
-    "/quick.*"
+    "development/"
   ],
   "testEnvironment": "node",
   "verbose": true
