@@ -92,7 +92,7 @@ typings/
 # Notes directory
 notes/
 
-# Develop directory
+# Development directory
 development/
 
 # scripts/build/ directory
@@ -129,7 +129,7 @@ backup/
 # .gitkeep
 
 # Matches the file ./developing.js
-/developing.js
+/developing.*.js
 
 # ━━  PROJECT ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
