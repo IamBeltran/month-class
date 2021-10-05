@@ -1,50 +1,49 @@
-# ━━  VERSION 1.0.0 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # ━━  GENERAL ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# Matches directory <root>/build/
-/build/**
+# Dependency directories
+node_modules/
+jspm_packages/
 
-# Matches directory <root>/coverage/
-/coverage/**
-
-# Matches directory <root>/docs/
+# docs
 /docs/**
 
-# Matches directory <root>/jsdoc/
+# testing
+/coverage/**
+
+# production
+/build/**
+/dist/**
+
+# JsDoc Files
 /jsdoc/**
 
 # Matches directory <root>/templates/
 /templates/**
 
-# Matches directory <root>/tests/bench/
+# Test
 /tests/bench/**
-
-# Matches directory <root>/tests/fixtures/
 /tests/fixtures/**
-
-# Matches directory <root>/tests/performance/
 /tests/performance/**
 
-# Matches directory <root>/tmp/
+# Misc
 /tmp/**
-
-test.js
+reports/
+/.pnp
+.pnp.js
+**/serviceWorker.js
 !.eslintrc
 
-node_modules/
-jspm_packages/
-dist/
-
 # ━━  WORKSPACE ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-notes/
-quick.*
-!quick.develop.js
-!quick.build.js
-!quick.dev.js
-test.*.js
-dummy.*.js
-/develop.js
-/development/testing.*.js
-/development/testing.js
-reports/
+# Notes
+/notes/**
 
-src/serviceWorker.js
+# Development
+/development/**
+
+# Matches the files name <root>/develop.js
+/develop.js
+
+# Matches the files name:
+#   <root>/develop-<name>.js
+#   <root>/develop_<name>.js
+#   <root>/develop.<name>.js
+/develop[-_.]*.js
