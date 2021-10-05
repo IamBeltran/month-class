@@ -20,7 +20,10 @@ yarn-error.log*
 .vscode/
 *.sw*
 
-# Ignore husky files
+# Ignore .github directory
+.github
+
+# Ignore .husky directory
 .husky
 
 # Ignore huskyrc rule configurations file
@@ -83,6 +86,7 @@ nodemon.json
 # ./docs/NOTES.md
 # ./docs/ICON.png
 
+# Ignore docs directory
 docs/
 # !docs/LOGO.png
 
