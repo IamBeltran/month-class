@@ -35,3 +35,9 @@ trim_trailing_whitespace = false
 indent_style = tab
 indent_size = 2
 tab_width = 2
+
+# Matches the exact files either .code-workspace
+# Matches for vscode workspace file
+[*.code-workspace]
+indent_style = space
+indent_size = 2
