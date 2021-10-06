@@ -318,3 +318,7 @@ Find the API docs [here](https://github.com/IamBeltran/month-class/wiki)
 
 - 🔳 Live demo browser
 - 🔳 Create react provider.
+
+## License
+
+The scripts and documentation in this project are released under the [MIT License](LICENSE)
