@@ -5,7 +5,7 @@
 
 // ━━	MODULE	━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 /**
- * MonthError is the base class for all errors specific to the 'Month' class.
+ * MonthError is the base class for all errors specific to the `Month` class.
  *
  * @class    MonthError
  * @augments Error
